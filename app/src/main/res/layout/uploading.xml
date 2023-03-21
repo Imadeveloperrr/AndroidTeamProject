@@ -19,10 +19,11 @@
         />
     <TextView
         android:id="@+id/explain"
-        android:layout_width="277dp"
+        android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="93dp"
         android:text="@string/explain"
@@ -68,7 +69,7 @@
     <TextView
         android:id="@+id/look_explain"
         android:layout_width="157dp"
-        android:layout_height="13dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="28dp"
         android:layout_alignParentTop="true"
@@ -117,7 +118,7 @@
     <TextView
         android:id="@+id/item_explain"
         android:layout_width="164dp"
-        android:layout_height="13dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="208dp"
         android:layout_alignParentTop="true"
