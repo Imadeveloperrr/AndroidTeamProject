@@ -112,7 +112,7 @@
                 android:clipToOutline="true">
                 <TextView
                     android:id="@+id/main_id"
-                    android:layout_width="117dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="16dp"
@@ -124,20 +124,82 @@
                 <LinearLayout
                     android:id="@+id/content_con"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="250dp"
                     android:layout_below="@id/main_id"
                     android:weightSum="2"
                     android:orientation="horizontal">
                     <View
                         android:id="@+id/content_con_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="250dp"
-                        android:layout_weight="1"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                    </View>
+
                     <View
                         android:id="@+id/content_con_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                    </View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_con"
+                    android:layout_centerInParent="true"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title2"
                         android:layout_width="wrap_content"
-                        android:layout_height="250dp"
-                        android:layout_weight="1"/>
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="유광진"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_con"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="이성호"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -145,6 +207,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_below="@id/content_con"
+                    android:layout_marginTop="50dp"
                     android:weightSum="2"
                     android:orientation="horizontal">
                     <View
@@ -158,12 +221,72 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_con2"
+                    android:layout_centerInParent="true"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="이성호"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_con2"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="김민우"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/content_blo_sup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
                 android:layout_below="@id/content_blo"
                 android:clipToOutline="true">
                 <TextView
@@ -177,6 +300,7 @@
                     android:text="@string/main_id2"
                     android:textAppearance="@style/main_id"
                     />
+
                 <LinearLayout
                     android:id="@+id/content_supcon"
                     android:layout_width="match_parent"
@@ -195,11 +319,70 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"/>
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/content_tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_supcon"
+                    android:layout_centerInParent="true"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="이성호"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_tv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_supcon"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="김민우"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/content_supcon2"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:layout_marginTop="50dp"
                     android:layout_below="@id/content_supcon"
                     android:weightSum="2"
                     android:orientation="horizontal">
@@ -213,6 +396,64 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/content_tv7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_supcon2"
+                    android:layout_centerInParent="true"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="이성호"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="180dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_tv8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/content_supcon2"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/content_tv_title8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="유광진"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:id="@+id/content_tv_content8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:layout_marginLeft="20dp"
+                        android:text="190 . 65kg . 270mm"
+                        android:textColor="#757575"
+                        android:textSize="18sp"
+                        />
                 </LinearLayout>
             </RelativeLayout>
         </RelativeLayout>
