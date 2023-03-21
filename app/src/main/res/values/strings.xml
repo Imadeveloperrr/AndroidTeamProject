@@ -15,4 +15,5 @@
     <string name="filter">Filter</string>
     <string name="main_search">Search</string>
     <string name="main_id">실시간 랭킹</string>
+    <string name="main_id2">오늘의 OOTD</string>
 </resources>

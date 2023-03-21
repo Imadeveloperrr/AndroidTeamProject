@@ -3,128 +3,220 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/marketMain"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:clipToOutline="true">
+    android:layout_height="fill_parent">
 
-    <RelativeLayout
-        android:id="@+id/page_header"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
-        android:layout_alignParentTop="true">
-
-        <TextView
-            android:id="@+id/back"
-            android:layout_width="38dp"
-            android:layout_height="19dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:text="@string/back"
-            android:textAppearance="@style/back"
-            android:gravity="top" />
-
-        <View
-            android:id="@+id/icon_x"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="-0.31dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="16dp"
-            android:background="#00000000"
-            />
-
-        <TextView
-            android:id="@+id/market"
-            android:layout_width="88dp"
-            android:layout_height="36dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/market"
-            android:textAppearance="@style/market"
-            android:gravity="center_horizontal|top"
-            />
-
-        <TextView
-            android:id="@+id/filter"
-            android:layout_width="39dp"
-            android:layout_height="19dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="8dp"
-            android:text="@string/filter"
-            android:textAppearance="@style/filter"
-            android:gravity="right|top"
-            />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/input_search"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="68dp">
-
-        <View
-            android:id="@+id/main_bg"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/main_bg"
-            />
-
-        <TextView
-            android:id="@+id/main_search"
-            android:layout_width="54dp"
-            android:layout_height="19dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="16dp"
-            android:layout_centerVertical="true"
-            android:text="@string/main_search"
-            android:textAppearance="@style/main_search"
-            android:gravity="top"
-            />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/content_blo"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="160dp"
-        android:clipToOutline="true">
-
-        <TextView
-            android:id="@+id/main_id"
-            android:layout_width="117dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="16dp"
-            android:layout_alignParentTop="true"
-            android:text="@string/main_id"
-            android:textAppearance="@style/main_id"
-            android:gravity="top"
-            />
-
+        android:layout_height="match_parent">
         <RelativeLayout
-            android:id="@+id/content_con"
-            android:layout_width="343dp"
-            android:layout_height="333dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/page_header"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentTop="true">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/back"
+                    android:layout_width="38dp"
+                    android:layout_height="19dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/back"
+                    android:textAppearance="@style/back"
+                    android:gravity="top" />
 
+                <View
+                    android:id="@+id/icon_x"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="-0.31dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:background="#00000000"
+                    />
+
+                <TextView
+                    android:id="@+id/market"
+                    android:layout_width="88dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/market"
+                    android:textAppearance="@style/market"
+                    android:gravity="center_horizontal|top"
+                    />
+
+                <TextView
+                    android:id="@+id/filter"
+                    android:layout_width="39dp"
+                    android:layout_height="19dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/filter"
+                    android:textAppearance="@style/filter"
+                    android:gravity="right|top"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/input_search"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="68dp">
+
+                <View
+                    android:id="@+id/main_bg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/main_bg"
+                    />
+
+                <TextView
+                    android:id="@+id/main_search"
+                    android:layout_width="54dp"
+                    android:layout_height="19dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/main_search"
+                    android:textAppearance="@style/main_search"
+                    android:gravity="top"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content_blo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="160dp"
+                android:clipToOutline="true">
+                <TextView
+                    android:id="@+id/main_id"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/main_id"
+                    android:textAppearance="@style/main_id"
+                    />
+                <LinearLayout
+                    android:id="@+id/content_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@id/main_id"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/content_con_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="250dp"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/content_con_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="250dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_con2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/content_con"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/content_con_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/content_con_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content_blo_sup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/content_blo"
+                android:clipToOutline="true">
+                <TextView
+                    android:id="@+id/content_blo_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/main_id2"
+                    android:textAppearance="@style/main_id"
+                    />
+                <LinearLayout
+                    android:id="@+id/content_supcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/content_blo_id"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/content_supcon_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/content_supcon_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/content_supcon2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/content_supcon"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/content_supcon_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                    <View
+                        android:id="@+id/content_supcon_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
