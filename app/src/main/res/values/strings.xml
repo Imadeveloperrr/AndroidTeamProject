@@ -34,6 +34,14 @@
     <string name="ex_name">예)홍길동</string>
     <string name="ph_number">휴대폰번호 *</string>
     <string name="sign_up_bt">회원가입</string>
+    <string name="upload_id">업로드 하기</string>
+    <string name="explain">Look 또는 Item을 업로드 하여 스타일 크리에이터가 되어보세요.</string>
+    <string name="look_logo">LOOK ></string>
+    <string name="look_explain">4:5 비율로 착샷을 올릴 수 있어요.</string>
+    <string name="item_logo">ITEM ></string>
+    <string name="item_explain">1:1 비율로 아이템을 올릴 수 있어요.</string>
+
+
 
 
 
