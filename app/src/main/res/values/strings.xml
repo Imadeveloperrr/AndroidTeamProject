@@ -16,4 +16,26 @@
     <string name="main_search">Search</string>
     <string name="main_id">실시간 랭킹</string>
     <string name="main_id2">오늘의 OOTD</string>
+    <string name="log_name">로그인</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="show">Show</string>
+    <string name="log_inbt">로그인</string>
+    <string name="join">회원가입</string>
+    <string name="login_logo">로그인</string>
+    <string name="join_logo">회원가입</string>
+    <string name="mail">이메일 *</string>
+    <string name="ex_mail">예)abcg1234@naver.com</string>
+    <string name="pwd_1">비밀번호 *</string>
+    <string name="ex_pwd">예)영문, 숫자 조합 8~16자</string>
+    <string name="pwd_2">비밀번호 확인 *</string>
+    <string name="ex_pwd2">예)영문, 숫자 조합 8~16자</string>
+    <string name="join_name">이름 *</string>
+    <string name="ex_name">예)홍길동</string>
+    <string name="ph_number">휴대폰번호 *</string>
+    <string name="sign_up_bt">회원가입</string>
+
+
+
+
 </resources>
