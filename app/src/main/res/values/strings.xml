@@ -10,4 +10,9 @@
     <string name="search">게시물</string>
     <string name="header">제목</string>
     <string name="m_ago">8m ago</string>
+    <string name="back">Back</string>
+    <string name="market">OOTD</string>
+    <string name="filter">Filter</string>
+    <string name="main_search">Search</string>
+    <string name="main_id">실시간 랭킹</string>
 </resources>
