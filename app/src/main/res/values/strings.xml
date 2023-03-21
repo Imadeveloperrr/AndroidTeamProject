@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Graduation work</string>
+    <string name="back">Back</string>
+    <string name="market">OOTD</string>
+    <string name="filter">Filter</string>
+    <string name="search">Search</string>
+    <string name="some_id">실시간 랭킹</string>
 </resources>
