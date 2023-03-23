@@ -34,6 +34,13 @@
     <string name="main_search">Search</string>
     <string name="main_id">실시간 랭킹</string>
     <string name="main_id2">오늘의 OOTD</string>
+    <string name="back_logo">Back</string>
+    <string name="center_ootd">OOTD</string>
+    <string name="home_logo">home</string>
+    <string name="mw_man">174cm/58kg/Man</string>
+    <string name="information">코디정보</string>
+
+
     <string name="log_name">로그인</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
