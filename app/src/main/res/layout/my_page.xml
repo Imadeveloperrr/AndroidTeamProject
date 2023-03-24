@@ -38,7 +38,7 @@
         android:layout_width="45dp"
         android:layout_height="19dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="29dp"
+        android:layout_marginRight="25dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="27dp"
         android:layout_marginBottom="679dp"
@@ -79,12 +79,12 @@
 
     <View
         android:id="@+id/good"
-        android:layout_width="42dp"
-        android:layout_height="45dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="48dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="542dp"
+        android:layout_marginTop="548dp"
         android:background="@drawable/good"
         />
 
