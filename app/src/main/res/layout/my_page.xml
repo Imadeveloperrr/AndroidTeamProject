@@ -90,7 +90,7 @@
 
     <TextView
         android:id="@+id/information"
-        android:layout_width="375dp"
+        android:layout_width="410dp"
         android:layout_height="178dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
