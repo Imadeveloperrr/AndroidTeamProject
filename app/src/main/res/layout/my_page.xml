@@ -72,7 +72,7 @@
     <View
         android:id="@+id/man"
         android:layout_width="50dp"
-        android:layout_height="52dp"
+        android:layout_height="50dp"
         android:layout_marginTop="542dp"
         android:background="@drawable/man"
         />
