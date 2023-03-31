@@ -47,14 +47,14 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/login_bg"
             />
-        <TextView
+        <EditText
             android:id="@+id/email"
-            android:layout_width="41dp"
-            android:layout_height="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="16dp"
             android:layout_centerVertical="true"
-            android:text="@string/email"
+            android:hint="@string/email"
             android:textAppearance="@style/email"
             android:gravity="top"
             />
@@ -81,14 +81,15 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/login_bg2"
             />
-        <TextView
+        <EditText
             android:id="@+id/password"
-            android:layout_width="75dp"
-            android:layout_height="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="16dp"
             android:layout_centerVertical="true"
-            android:text="@string/password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
             android:textAppearance="@style/password"
             android:gravity="top"
             />
@@ -122,6 +123,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:clickable="true"
+            android:onClick="onTextViewClicked"
             android:text="@string/log_inbt"
             android:textAppearance="@style/log_inbt" />
     </RelativeLayout>
@@ -131,9 +134,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="263dp"
+        android:layout_marginBottom="268dp"
         android:text="@string/join"
         android:textAppearance="@style/join"
         android:gravity="top"
+        android:onClick="onTextViewClicked"
+        android:clickable="true"
         />
 </RelativeLayout>

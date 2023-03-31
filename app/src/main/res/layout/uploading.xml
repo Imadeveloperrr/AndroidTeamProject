@@ -126,12 +126,4 @@
         android:textAppearance="@style/item_explain"
         android:gravity="center_horizontal|top"
         />
-
-
-
-
-
-
-
-
 </RelativeLayout>

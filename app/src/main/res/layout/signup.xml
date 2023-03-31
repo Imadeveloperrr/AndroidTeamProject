@@ -1,22 +1,8 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sign_up"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:clipToOutline="true">
-
-    <TextView
-        android:id="@+id/join_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="22dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="28dp"
-        android:text="@string/join_logo"
-        android:textAppearance="@style/join_logo"
-        android:gravity="top"
-        />
 
     <View
         android:id="@+id/group_1"
@@ -50,16 +36,17 @@
         android:background="@drawable/rectangle_1"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/ex_mail"
         android:layout_width="343dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="158dp"
+        android:layout_marginTop="149dp"
+        android:maxLines="1"
         android:gravity="top"
-        android:text="@string/ex_mail"
+        android:hint="@string/ex_mail"
         android:textAppearance="@style/ex_mail" />
     <View
         android:id="@+id/group_2"
@@ -92,15 +79,17 @@
         android:layout_marginTop="249dp"
         android:background="@drawable/rectangle_2"
         />
-    <TextView
+    <EditText
         android:id="@+id/ex_pwd"
         android:layout_width="340dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="264dp"
-        android:text="@string/ex_pwd"
+        android:layout_marginTop="255dp"
+        android:hint="@string/ex_pwd"
+        android:inputType="textPassword"
+        android:maxLines="1"
         android:textAppearance="@style/ex_pwd"
         android:gravity="top"
         />
@@ -136,15 +125,17 @@
         android:layout_marginTop="354dp"
         android:background="@drawable/rectangle_3"
         />
-    <TextView
+    <EditText
         android:id="@+id/ex_pwd2"
         android:layout_width="340dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="369dp"
-        android:text="@string/ex_pwd2"
+        android:layout_marginTop="361dp"
+        android:hint="@string/ex_pwd2"
+        android:inputType="textPassword"
+        android:maxLines="1"
         android:textAppearance="@style/ex_pwd2"
         android:gravity="top"
         />
@@ -179,15 +170,17 @@
         android:layout_marginTop="459dp"
         android:background="@drawable/rectangle_4"
         />
-    <TextView
+    <EditText
         android:id="@+id/ex_name"
         android:layout_width="340dp"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="474dp"
-        android:text="@string/ex_name"
+        android:layout_marginTop="462dp"
+        android:hint="@string/ex_name"
+        android:maxLines="1"
+        android:privateImeOptions="defaultInputmode=korean"
         android:textAppearance="@style/ex_name"
         android:gravity="top"
         />
@@ -225,6 +218,20 @@
         android:layout_marginTop="564dp"
         android:background="@drawable/rectangle_5" />
 
+    <EditText
+        android:id="@+id/ex_phone_number"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="568dp"
+        android:hint="@string/ex_phone_number"
+        android:textAppearance="@style/ex_phone_number"
+        android:maxLines="1"
+        android:gravity="top"
+        />
+
     <RelativeLayout
 
         android:id="@+id/button_prim"
@@ -246,5 +253,7 @@
             android:text="@string/sign_up_bt"
             android:textAppearance="@style/sign_up_bt"
             />
+
     </RelativeLayout>
+
 </RelativeLayout>
