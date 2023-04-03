@@ -64,4 +64,9 @@
     <string name="comments_name">유광진</string>
     <string name="comments_body">MEN · 174cm · 63kg · 260mm</string>
     <string name="comments_main_info">댓글을 남겨주세요!</string>
+    <string name="comments_ex">댓글 달기</string>
+    <string name="style_page_comments_ex">첫 댓글을 남겨주세요.</string>
+    <string name="profile_re_post_count">1</string>
+    <string name="profile_re_following_count">1</string>
+    <string name="profile_re_follower_count">1</string>
 </resources>
