@@ -152,7 +152,7 @@
                 android:layout_marginTop="637dp"
                 android:clipToOutline="true">
 
-                <RadioButton
+                <TextView
                     android:id="@+id/profile_re_ca_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                     android:gravity="top"
                     android:button="@null"
                     />
-                <RadioButton
+                <TextView
                     android:id="@+id/profile_re_ca_review"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
                     android:gravity="top"
                     android:button="@null"
                     />
-                <RadioButton
+                <TextView
                     android:id="@+id/profile_re_ca_collection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                     android:gravity="top"
                     android:button="@null"
                     />
-                <RadioButton
+                <TextView
                     android:id="@+id/profile_re_ca_scrap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
