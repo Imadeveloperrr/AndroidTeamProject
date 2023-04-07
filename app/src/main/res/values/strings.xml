@@ -46,4 +46,27 @@
     <string name="item_logo">ITEM ></string>
     <string name="item_explain">1:1 비율로 아이템을 올릴 수 있어요.</string>
     <string name="ex_phone_number">예) 010-1234-5678</string>
+    <string name="oo_td">OO\nTD</string>
+    <string name="profile_re_name">유광진</string>
+    <string name="profile_re_Body">MEN · 174cm · 63kg · 260mm</string>
+    <string name="profile_re_post">Post</string>
+    <string name="profile_re_following">Following</string>
+    <string name="profile_re_follower">Follower</string>
+    <string name="profile_re_ca_style">Style</string>
+    <string name="profile_re_ca_review">Review</string>
+    <string name="profile_re_ca_collection">Collection</string>
+    <string name="profile_re_ca_scrap">Scrap</string>
+    <string name="style_back">Back</string>
+    <string name="Style_page_logo">Style</string>
+    <string name="Style_page_info_name">유광진</string>
+    <string name="Style_page_info_body">MEN · 174cm · 63kg · 260mm</string>
+    <string name="comments_back">Back</string>
+    <string name="comments_name">유광진</string>
+    <string name="comments_body">MEN · 174cm · 63kg · 260mm</string>
+    <string name="comments_main_info">댓글을 남겨주세요!</string>
+    <string name="comments_ex">댓글 달기</string>
+    <string name="style_page_comments_ex">첫 댓글을 남겨주세요.</string>
+    <string name="profile_re_post_count">1</string>
+    <string name="profile_re_following_count">1</string>
+    <string name="profile_re_follower_count">1</string>
 </resources>

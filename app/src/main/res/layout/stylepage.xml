@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Style_page"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/Style_page_header"
+                android:layout_width="411dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp">
+
+                <TextView
+                    android:id="@+id/style_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginRight="330dp"
+                    android:layout_marginBottom="50dp"
+                    android:gravity="top"
+                    android:text="@string/style_back"
+                    android:textAppearance="@style/style_back" />
+
+                <TextView
+                    android:id="@+id/Style_page_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="176dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="171dp"
+                    android:layout_marginBottom="50dp"
+                    android:gravity="top"
+                    android:text="@string/Style_page_logo"
+                    android:textAppearance="@style/Style_page_logo" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Style_page_info"
+                android:layout_width="411dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="100dp">
+
+                <TextView
+                    android:id="@+id/Style_page_info_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/Style_page_info_name"
+                    android:textAppearance="@style/Style_page_info_name"
+                    android:gravity="top"
+                    />
+
+                <TextView
+                    android:id="@+id/Style_page_info_body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="17dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="67dp"
+                    android:text="@string/Style_page_info_body"
+                    android:textAppearance="@style/Style_page_info_body"
+                    android:gravity="top"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Style_page_picture"
+                android:layout_width="411dp"
+                android:layout_height="475dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="201dp">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/frame_7"
+                android:layout_width="411dp"
+                android:layout_height="252dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="676dp">
+
+                <ImageView
+                    android:id="@+id/like_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/like" />
+
+                <ImageView
+                    android:id="@+id/comments_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/comments" />
+
+                <View
+                    android:id="@+id/Style_page_comments_re"
+                    android:layout_width="347dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="82dp"
+                    />
+                <TextView
+                    android:id="@+id/Style_page_comments_ex"
+                    android:layout_width="340dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="92dp"
+                    android:text="@string/style_page_comments_ex"
+                    android:textAppearance="@style/style_page_comments_ex"
+                    android:gravity="top"
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

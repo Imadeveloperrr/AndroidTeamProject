@@ -107,7 +107,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/button_prim"
+        android:id="@+id/login_button_prim"
         android:layout_width="0dp"
         android:layout_height="51dp"
         android:layout_alignParentLeft="true"

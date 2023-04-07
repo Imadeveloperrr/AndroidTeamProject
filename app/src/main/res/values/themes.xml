@@ -203,4 +203,96 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#BDBDBD</item>
     </style>
+    <style name="oo_td">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_name">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_Body">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_post">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_following">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_follower">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_ca_style">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_ca_review">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_ca_collection">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_ca_scrap">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="style_back">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="Style_page_logo">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="Style_page_info_name">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="Style_page_info_body">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="comments_back">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="comments_name">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="comments_body">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="comments_main_info">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="comments_ex">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#BDBDBD</item>
+    </style>
+    <style name="style_page_comments_ex">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#BDBDBD</item>
+    </style>
+    <style name="profile_re_post_count">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_following_count">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="profile_re_follower_count">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
 </resources>
