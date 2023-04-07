@@ -79,6 +79,35 @@
                     android:gravity="top"
                     />
             </RelativeLayout>
+
+            <View
+                android:id="@+id/comments_Register"
+                android:layout_width="411dp"
+                android:layout_height="51dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="697dp"/>
+
+            <EditText
+                android:id="@+id/comments_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="704dp"
+                android:gravity="top"
+                android:hint="@string/comments_ex"
+                android:textAppearance="@style/comments_ex" />
+
+            <ImageView
+                android:id="@+id/Comments_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="365dp"
+                android:layout_marginTop="710dp"
+                android:src="@drawable/point" />
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
