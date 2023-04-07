@@ -234,7 +234,7 @@
 
     <RelativeLayout
 
-        android:id="@+id/button_prim"
+        android:id="@+id/signup_button_prim"
         android:layout_width="0dp"
         android:layout_height="51dp"
         android:layout_alignParentLeft="true"
@@ -251,8 +251,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/sign_up_bt"
-            android:textAppearance="@style/sign_up_bt"
-            />
+            android:textAppearance="@style/sign_up_bt" />
 
     </RelativeLayout>
 
