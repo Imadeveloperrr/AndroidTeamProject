@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uploading_re_layout -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/uploading_re_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true">
+    <!-- Uploading_re_header -->
+    <RelativeLayout
+        android:id="@+id/uploading_re_header"
+        android:layout_width="411dp"
+        android:layout_height="260dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:clipToOutline="true">
+        <!-- Uploading_re_logo -->
+        <TextView
+            android:id="@+id/uploading_re_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="126dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/uploading_re_logo"
+            android:textAppearance="@style/uploading_re_logo"
+            android:gravity="center_horizontal|top"
+            />
+        <!-- Uploading_re_Back -->
+        <TextView
+            android:id="@+id/uploading_re_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/uploading_re_back"
+            android:textAppearance="@style/uploading_re_back"
+            android:gravity="top"
+            />
+        <!-- Uploading_re_ex -->
+        <TextView
+            android:id="@+id/uploading_re_ex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="120dp"
+            android:text="@string/uploading_re_ex"
+            android:textAppearance="@style/uploading_re_ex"
+            android:gravity="center_horizontal|top"
+            />
+    </RelativeLayout>
+    <!-- Uploading_re_posting -->
+    <RelativeLayout
+        android:id="@+id/uploading_re_posting"
+        android:layout_width="411dp"
+        android:layout_height="520dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="260dp"
+        android:clipToOutline="true">
+        <!-- Uploading_re_style -->
+        <RelativeLayout
+            android:id="@+id/uploading_re_style"
+            android:layout_width="211dp"
+            android:layout_height="520dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true">
+            <!-- style_upload -->
+            <RelativeLayout
+                android:id="@+id/style_upload"
+                android:layout_width="211dp"
+                android:layout_height="220dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:clipToOutline="true">
+
+                <ImageView
+                    android:layout_width="211dp"
+                    android:layout_height="220dp"
+                    android:src="@drawable/icon_clothes" />
+            </RelativeLayout>
+            <!-- style_upload_look_logo -->
+            <TextView
+                android:id="@+id/style_upload_look_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="76dp"
+                android:layout_marginTop="250dp"
+                android:text="@string/style_upload_look_logo"
+                android:textAppearance="@style/style_upload_look_logo"
+                android:gravity="top"
+                />
+            <!-- style_upload_ex -->
+            <TextView
+                android:id="@+id/style_upload_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="310dp"
+                android:text="@string/style_upload_ex"
+                android:textAppearance="@style/style_upload_ex"
+                android:gravity="center_horizontal|top"
+                />
+        </RelativeLayout>
+        <!-- Uploading_re_item -->
+        <RelativeLayout
+            android:id="@+id/uploading_re_item"
+            android:layout_width="200dp"
+            android:layout_height="520dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="211dp"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true">
+            <!-- item_upload -->
+            <RelativeLayout
+                android:id="@+id/item_upload"
+                android:layout_width="200dp"
+                android:layout_height="220dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:clipToOutline="true">
+                <ImageView
+                    android:layout_width="211dp"
+                    android:layout_height="220dp"
+                    android:src="@drawable/icon_shoes" />
+            </RelativeLayout>
+            <!-- item_upload_logo -->
+            <!-- item_upload_ex -->
+            <TextView
+                android:id="@+id/item_upload_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="248dp"
+                android:gravity="top"
+                android:text="@string/item_upload_logo"
+                android:textAppearance="@style/item_upload_logo" />
+
+            <TextView
+                android:id="@+id/item_upload_ex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="310dp"
+                android:text="@string/item_upload_ex"
+                android:textAppearance="@style/item_upload_ex"
+                android:gravity="center_horizontal|top"
+                />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
