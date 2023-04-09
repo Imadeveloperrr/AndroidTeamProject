@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Login_re_layout -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_re_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- Login_re_header_layout -->
+            <RelativeLayout
+                android:id="@+id/login_re_he"
+                android:layout_width="411dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:clipToOutline="true">
+                <!-- Login_re_logo -->
+                <TextView
+                    android:id="@+id/login_re_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="171dp"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/login_re_logo"
+                    android:textAppearance="@style/login_re_logo"
+                    android:gravity="top"
+                    />
+                <!-- Login_re_Back -->
+                <TextView
+                    android:id="@+id/login_re_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/login_re_back"
+                    android:textAppearance="@style/login_re_back"
+                    android:gravity="top"
+                    />
+            </RelativeLayout>
+            <!-- Login_re_info_layout -->
+            <RelativeLayout
+                android:id="@+id/login_re_info_layout"
+                android:layout_width="411dp"
+                android:layout_height="210dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="120dp"
+                android:clipToOutline="true">
+                <!-- Login_re_info_email_layout -->
+                <RelativeLayout
+                    android:id="@+id/login_re_info_email_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="35dp">
+                    <!-- login_re_info_email -->
+                    <View
+                        android:id="@+id/login_re_info_box"
+                        android:layout_width="370dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/login_re_info_box"
+                        />
+                    <!-- login_re_info_email -->
+                    <EditText
+                        android:id="@+id/login_re_info_email"
+                        android:layout_width="357dp"
+                        android:layout_height="49dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="top"
+                        android:hint="@string/login_re_info_email"
+                        android:textAppearance="@style/login_re_info_email" />
+                </RelativeLayout>
+                <!-- Login_re_info_pwd_layout -->
+                <RelativeLayout
+                    android:id="@+id/login_re_info_pwd_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="105dp">
+                    <!-- login_re_info_pwd_box -->
+                    <View
+                        android:id="@+id/login_re_info_pwd_box"
+                        android:layout_width="370dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/login_re_info_pwd_box"
+                        />
+                    <!-- login_re_info_pwd -->
+                    <EditText
+                        android:id="@+id/login_re_info_pwd"
+                        android:layout_width="357dp"
+                        android:layout_height="49dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:hint="@string/login_re_info_pwd"
+                        android:textAppearance="@style/login_re_info_pwd"
+                        android:gravity="top"
+                        android:inputType="textPassword"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+            <!-- Login_re_button_layout -->
+            <RelativeLayout
+                android:id="@+id/login_re_bt_layout"
+                android:layout_width="411dp"
+                android:layout_height="241dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="330dp"
+                android:clipToOutline="true">
+                <!-- Login_re_button_login_layout -->
+                <RelativeLayout
+                    android:id="@+id/login_re_bt_login_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="162dp"
+                    android:background="@drawable/login_re_bt_login_layout">
+                    <!-- Login_re_button_login-->
+                    <TextView
+                        android:id="@+id/login_re_bt_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_re_bt_login"
+                        android:textAppearance="@style/login_re_bt_login"
+                        android:gravity="center_horizontal|top"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <!-- Login_re_button_signup_layout -->
+                <RelativeLayout
+                    android:id="@+id/login_re_bt_signup_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="95dp"
+                    android:background="@drawable/login_re_bt_signup_layout">
+                    <!-- Login_re_button_signup -->
+                    <TextView
+                        android:id="@+id/login_re_bt_signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_re_bt_signup"
+                        android:textAppearance="@style/login_re_bt_signup"
+                        android:gravity="center_horizontal|top"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <!-- Login_re_pwd_find -->
+                <TextView
+                    android:id="@+id/login_re_pw_find"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="60dp"
+                    android:text="@string/login_re_pw_find"
+                    android:textAppearance="@style/login_re_pw_find"
+                    android:gravity="top"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
