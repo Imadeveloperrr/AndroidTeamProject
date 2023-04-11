@@ -1,5 +1,6 @@
 package com.example.graduationwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,20 +11,20 @@ import com.example.graduationwork.databinding.ProfileReBinding;
 
 public class Profile_re extends AppCompatActivity {
 
+    private ProfileReBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        ProfileReBinding binding = ProfileReBinding.inflate(getLayoutInflater());
+        binding = ProfileReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.profileReCaStyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                binding.profileReCaStyle.setVisibility(View.VISIBLE);
-                setContentView(R.layout.stylepage);
+                Intent intent = new Intent(Profile_re.this, StylePage.class);
+                startActivity(intent);
             }
         });
     }
