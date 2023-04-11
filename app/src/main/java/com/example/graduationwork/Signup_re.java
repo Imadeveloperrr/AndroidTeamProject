@@ -1,13 +1,113 @@
 package com.example.graduationwork;
 
+import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.graduationwork.databinding.SignupReBinding;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.SocketTimeoutException;
+import java.net.URLEncoder;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 public class Signup_re extends AppCompatActivity {
+
+    private SignupReBinding binding;
+    private SignupService signupService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup_re);
+
+        binding = SignupReBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                .build();
+
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://ec2-15-164-221-114.ap-northeast-2.compute.amazonaws.com/")
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        signupService = retrofit.create(SignupService.class);
+
+        binding.signupReBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = binding.signupReEx.getText().toString();
+                String pw = binding.signupRePwdEx.getText().toString();
+                String name = binding.signupReNameEx.getText().toString();
+                String number = binding.signupRePhoneEx.getText().toString();
+                String tall = binding.signupReHeightEx.getText().toString();
+                String weight = binding.signupReWeightEx.getText().toString();
+                String gender = binding.signupReGenderEx.getText().toString();
+                String foot = binding.signupReShoesEx.getText().toString();
+                Call<JsonObject> call = signupService.registerUser(email, pw, name, number, tall, weight, gender, foot);
+                call.enqueue(new Callback<JsonObject>() {
+                    @Override
+                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                        if (response.isSuccessful() && response.body() != null) {
+                            boolean success = false;
+                            try {
+                                JsonElement jsonElement = JsonParser.parseString(response.body().toString());
+                                JsonObject jsonObject = jsonElement.getAsJsonObject();
+                                Log.e("success", "response content : " + jsonObject.toString());
+                                success = jsonObject.get("success").getAsBoolean();
+                            } catch (JsonSyntaxException e) {
+                                e.printStackTrace();
+                            }
+                            if (success) {
+                                Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Signup_re.this, Login_re.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Log.e("onResponse", "서버 응답 실패");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                        Toast.makeText(getApplicationContext(), "예외 1", Toast.LENGTH_SHORT).show();
+
+                        Log.e("Signup", "Failed request: " + call.request());
+                        Log.e("Signup", "Error message: " + t.getMessage());
+                        Log.e("Signup", "Error message: " + t.getCause());
+                        Log.e("Signup", "Error message: " + t.getStackTrace());
+                    }
+                });
+            }
+        });
     }
 }
