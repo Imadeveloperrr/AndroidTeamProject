@@ -10,6 +10,46 @@ public class Login_User {
     private String gender;
     private String foot;
     private String tall;
+    private int post;
+    private int follower;
+
+    public int getPost() {
+        return post;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public String getFoot() {
+        return foot;
+    }
+
+    public String getTall() {
+        return tall;
+    }
+
+    public void setPost(int post) {
+        this.post = post;
+    }
+
+    public int getFollower() {
+        return follower;
+    }
+
+    public void setFollower(int follower) {
+        this.follower = follower;
+    }
+
+    public int getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(int following) {
+        this.following = following;
+    }
+
+    private int following;
     public int getSeq() {
         return seq;
     }
