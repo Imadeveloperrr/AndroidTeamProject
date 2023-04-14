@@ -12,17 +12,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.SocketTimeoutException;
-import java.net.URLEncoder;
+import java.util.Arrays;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -52,7 +45,7 @@ public class Signup_re extends AppCompatActivity {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://ec2-15-164-221-114.ap-northeast-2.compute.amazonaws.com/")
+                .baseUrl("http://ec2-3-34-179-47.ap-northeast-2.compute.amazonaws.com")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
@@ -62,14 +55,14 @@ public class Signup_re extends AppCompatActivity {
         binding.signupReBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = binding.signupReEx.getText().toString();
-                String pw = binding.signupRePwdEx.getText().toString();
-                String name = binding.signupReNameEx.getText().toString();
-                String number = binding.signupRePhoneEx.getText().toString();
-                String tall = binding.signupReHeightEx.getText().toString();
-                String weight = binding.signupReWeightEx.getText().toString();
-                String gender = binding.signupReGenderEx.getText().toString();
-                String foot = binding.signupReShoesEx.getText().toString();
+                String email = binding.signupReEx.getText().toString().trim();
+                String pw = binding.signupRePwdEx.getText().toString().trim();
+                String name = binding.signupReNameEx.getText().toString().trim();
+                String number = binding.signupRePhoneEx.getText().toString().trim();
+                String tall = binding.signupReHeightEx.getText().toString().trim();
+                String weight = binding.signupReWeightEx.getText().toString().trim();
+                String gender = binding.signupReGenderEx.getText().toString().trim();
+                String foot = binding.signupReShoesEx.getText().toString().trim();
                 Call<JsonObject> call = signupService.registerUser(email, pw, name, number, tall, weight, gender, foot);
                 call.enqueue(new Callback<JsonObject>() {
                     @Override
@@ -98,13 +91,12 @@ public class Signup_re extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
-
-                        Toast.makeText(getApplicationContext(), "예외 1", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "예외 발생", Toast.LENGTH_SHORT).show();
 
                         Log.e("Signup", "Failed request: " + call.request());
                         Log.e("Signup", "Error message: " + t.getMessage());
-                        Log.e("Signup", "Error message: " + t.getCause());
-                        Log.e("Signup", "Error message: " + t.getStackTrace());
+                        Log.e("Signup", "Error cause: " + t.getCause());
+                        Log.e("Signup", "Error stack trace: " + Arrays.toString(t.getStackTrace()));
                     }
                 });
             }

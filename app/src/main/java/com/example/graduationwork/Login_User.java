@@ -5,7 +5,11 @@ public class Login_User {
     private String email;
     private String pw;
     private String name;
-
+    private String number;
+    private String weight;
+    private String gender;
+    private String foot;
+    private String tall;
     public int getSeq() {
         return seq;
     }
@@ -13,9 +17,6 @@ public class Login_User {
     public void setSeq(int seq) {
         this.seq = seq;
     }
-
-    private String number;
-    private String weight;
 
     public void setWeight(String weight) {
         this.weight = weight;
@@ -28,10 +29,6 @@ public class Login_User {
     public void setTall(String tall) {
         this.tall = tall;
     }
-
-    private String gender;
-    private String foot;
-    private String tall;
 
     public String getEmail() {
         return email;
