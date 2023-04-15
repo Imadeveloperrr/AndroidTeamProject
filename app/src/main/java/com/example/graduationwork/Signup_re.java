@@ -31,14 +31,7 @@ public class Signup_re extends AppCompatActivity {
 
     private SignupReBinding binding;
     private SignupService signupService;
-    String email = binding.signupReEx.getText().toString().trim();
-    String pw = binding.signupRePwdEx.getText().toString().trim();
-    String name = binding.signupReNameEx.getText().toString().trim();
-    String number = binding.signupRePhoneEx.getText().toString().trim();
-    String tall = binding.signupReHeightEx.getText().toString().trim();
-    String weight = binding.signupReWeightEx.getText().toString().trim();
-    String gender = binding.signupReGenderEx.getText().toString().trim();
-    String foot = binding.signupReShoesEx.getText().toString().trim();
+    String email, pw, name, number, tall, weight, gender, foot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +39,15 @@ public class Signup_re extends AppCompatActivity {
 
         binding = SignupReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        email = binding.signupReEx.getText().toString().trim();
+        pw = binding.signupRePwdEx.getText().toString().trim();
+        name = binding.signupReNameEx.getText().toString().trim();
+        number = binding.signupRePhoneEx.getText().toString().trim();
+        tall = binding.signupReHeightEx.getText().toString().trim();
+        weight = binding.signupReWeightEx.getText().toString().trim();
+        gender = binding.signupReGenderEx.getText().toString().trim();
+        foot = binding.signupReShoesEx.getText().toString().trim();
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
@@ -67,35 +69,43 @@ public class Signup_re extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(TextUtils.isEmpty(email)) {
-                    EmptyCheckDialog(0);
+                    Toast.makeText(Signup_re.this, "오류 : 이메일을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupReEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(pw)) {
-                    EmptyCheckDialog(1);
+                    Toast.makeText(Signup_re.this, "오류 : 패스워드를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupRePwdEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(name)) {
-                    EmptyCheckDialog(2);
+                    Toast.makeText(Signup_re.this, "오류 : 이름을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupReNameEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(number)) {
-                    EmptyCheckDialog(3);
+                    Toast.makeText(Signup_re.this, "오류 : 번호를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupRePhoneEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(tall)) {
-                    EmptyCheckDialog(4);
+                    Toast.makeText(Signup_re.this, "오류 : 키를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupReHeightEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(weight)) {
-                    EmptyCheckDialog(5);
+                    Toast.makeText(Signup_re.this, "오류 : 몸무게를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupReWeightEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(gender)) {
-                    EmptyCheckDialog(6);
+                    Toast.makeText(Signup_re.this, "오류 : 성별을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupReGenderEx.setText("");
                     return;
                 }
                 if(TextUtils.isEmpty(foot)) {
-                    EmptyCheckDialog(7);
+                    Toast.makeText(Signup_re.this, "오류 : 신발 사이즈를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
+                    binding.signupReShoesEx.setText("");;
                     return;
                 }
                 SignupStart();
@@ -103,39 +113,6 @@ public class Signup_re extends AppCompatActivity {
         });
     }
 
-    private void EmptyCheckDialog(int i) {
-        if(i == 0){
-            Toast.makeText(Signup_re.this, "오류 : 이메일을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupReEx.setText("");
-        } else if (i == 1) {
-            Toast.makeText(Signup_re.this, "오류 : 패스워드를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupRePwdEx.setText("");
-        }
-        else if (i == 2) {
-            Toast.makeText(Signup_re.this, "오류 : 이름을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupReNameEx.setText("");
-        }
-        else if (i == 3) {
-            Toast.makeText(Signup_re.this, "오류 : 번호를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupRePhoneEx.setText("");
-        }
-        else if (i == 4) {
-            Toast.makeText(Signup_re.this, "오류 : 키를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupReHeightEx.setText("");
-        }
-        else if (i == 5) {
-            Toast.makeText(Signup_re.this, "오류 : 몸무게를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupReWeightEx.setText("");
-        }
-        else if (i == 6) {
-            Toast.makeText(Signup_re.this, "오류 : 성별을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupReGenderEx.setText("");
-        }
-        else if (i == 7) {
-            Toast.makeText(Signup_re.this, "오류 : 신발 사이즈를 다시 입력하세요.", Toast.LENGTH_SHORT).show();
-            binding.signupReShoesEx.setText("");
-        }
-    }
     private void SignupStart(){
 
         Call<JsonObject> call = signupService.registerUser(email, pw, name, number, tall, weight, gender, foot);
