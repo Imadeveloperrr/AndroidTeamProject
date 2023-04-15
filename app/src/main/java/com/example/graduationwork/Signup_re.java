@@ -40,15 +40,6 @@ public class Signup_re extends AppCompatActivity {
         binding = SignupReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        email = binding.signupReEx.getText().toString().trim();
-        pw = binding.signupRePwdEx.getText().toString().trim();
-        name = binding.signupReNameEx.getText().toString().trim();
-        number = binding.signupRePhoneEx.getText().toString().trim();
-        tall = binding.signupReHeightEx.getText().toString().trim();
-        weight = binding.signupReWeightEx.getText().toString().trim();
-        gender = binding.signupReGenderEx.getText().toString().trim();
-        foot = binding.signupReShoesEx.getText().toString().trim();
-
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build();
@@ -66,8 +57,18 @@ public class Signup_re extends AppCompatActivity {
         signupService = retrofit.create(SignupService.class);
 
         binding.signupReBt.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                email = binding.signupReEx.getText().toString().trim();
+                pw = binding.signupRePwdEx.getText().toString().trim();
+                name = binding.signupReNameEx.getText().toString().trim();
+                number = binding.signupRePhoneEx.getText().toString().trim();
+                tall = binding.signupReHeightEx.getText().toString().trim();
+                weight = binding.signupReWeightEx.getText().toString().trim();
+                gender = binding.signupReGenderEx.getText().toString().trim();
+                foot = binding.signupReShoesEx.getText().toString().trim();
+                Log.e("Click", "email : " + email);
                 if(TextUtils.isEmpty(email)) {
                     Toast.makeText(Signup_re.this, "오류 : 이메일을 다시 입력하세요.", Toast.LENGTH_SHORT).show();
                     binding.signupReEx.setText("");
@@ -108,12 +109,12 @@ public class Signup_re extends AppCompatActivity {
                     binding.signupReShoesEx.setText("");;
                     return;
                 }
-                SignupStart();
+                SignupStart(email, pw, name, number, tall, weight, gender, foot);
             }
         });
     }
 
-    private void SignupStart(){
+    private void SignupStart(String email,String  pw,String  name,String  number,String  tall,String  weight,String  gender,String  foot){
 
         Call<JsonObject> call = signupService.registerUser(email, pw, name, number, tall, weight, gender, foot);
         call.enqueue(new Callback<JsonObject>() {
