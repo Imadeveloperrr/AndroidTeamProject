@@ -1,5 +1,6 @@
 package com.example.graduationwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -44,6 +45,14 @@ public class Login_re extends AppCompatActivity {
                 }
 
                 loginUser(email, password);
+            }
+        });
+
+        binding.loginReBtSignupLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login_re.this, Signup_re.class);
+                startActivity(intent);
             }
         });
     }
