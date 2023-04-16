@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.graduationwork.databinding.CommentspageBinding;
 import com.example.graduationwork.databinding.ProfileReBinding;
 
 
-
 public class Profile_re extends AppCompatActivity {
-
     private ProfileReBinding binding;
+
+
 
 
     @Override
@@ -27,5 +29,6 @@ public class Profile_re extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

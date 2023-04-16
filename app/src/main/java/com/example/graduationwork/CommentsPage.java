@@ -18,6 +18,7 @@ public class CommentsPage extends AppCompatActivity {
         binding = CommentspageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         binding.commentsBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,6 +26,5 @@ public class CommentsPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

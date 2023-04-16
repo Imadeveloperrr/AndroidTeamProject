@@ -58,5 +58,8 @@
     <string name="style_upload_ex">4:5 비율로 착샷을 올릴 수 있어요.</string>
     <string name="item_upload_logo">ITEM ></string>
     <string name="item_upload_ex">1:1 비율로 아이템을 올릴 수 있어요.</string>
-
+    <string name="homepage_market">OOTD</string>
+    <string name="homepage_main_search">Search</string>
+    <string name="homepage_main_id">실시간 랭킹</string>
+    <string name="homepage_main_id2">오늘의 OOTD</string>
 </resources>
