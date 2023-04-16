@@ -18,9 +18,5 @@ public class Homepage_re extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = HomepageReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
-
-
     }
 }

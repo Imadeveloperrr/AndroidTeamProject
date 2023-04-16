@@ -160,11 +160,13 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="30dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="@string/profile_re_ca_style"
+                    android:textColor="#808080"
+                    android:clickable="true"
                     android:textAppearance="@style/profile_re_ca_style"
                     android:gravity="top"
-                    android:button="@null"
                     />
                 <TextView
                     android:id="@+id/profile_re_ca_review"
@@ -173,11 +175,13 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="109dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#808080"
+                    android:clickable="true"
                     android:text="@string/profile_re_ca_review"
                     android:textAppearance="@style/profile_re_ca_review"
                     android:gravity="top"
-                    android:button="@null"
                     />
                 <TextView
                     android:id="@+id/profile_re_ca_collection"
@@ -186,11 +190,13 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="205dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#808080"
+                    android:clickable="true"
                     android:text="@string/profile_re_ca_collection"
                     android:textAppearance="@style/profile_re_ca_collection"
                     android:gravity="top"
-                    android:button="@null"
                     />
                 <TextView
                     android:id="@+id/profile_re_ca_scrap"
@@ -199,11 +205,13 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="330dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#808080"
+                    android:clickable="true"
                     android:text="@string/profile_re_ca_scrap"
                     android:textAppearance="@style/profile_re_ca_scrap"
                     android:gravity="top"
-                    android:button="@null"
                     />
             </RelativeLayout>
 
@@ -213,8 +221,10 @@
                 android:layout_height="214dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="689dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="687dp"
                 android:clipToOutline="true">
+
             </RelativeLayout>
 
         </RelativeLayout>
