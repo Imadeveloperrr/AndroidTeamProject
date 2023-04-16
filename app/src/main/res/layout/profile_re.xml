@@ -150,7 +150,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="637dp"
-                android:clipToOutline="true">
+                android:clipToOutline="true"
+                android:background="@drawable/profile_re_edge">
 
                 <TextView
                     android:id="@+id/profile_re_ca_style"

@@ -36,8 +36,5 @@ public class Uploading_re extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-//        if (requestCode == PICK_IMAGE_REQUEST_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-//            Uri selectedImageUri = data.getData();
-//        }
     }
 }

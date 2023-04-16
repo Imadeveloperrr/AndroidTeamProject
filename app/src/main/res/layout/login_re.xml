@@ -157,11 +157,10 @@
                         android:id="@+id/login_re_bt_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/login_re_bt_login"
-                        android:textAppearance="@style/login_re_bt_login"
-                        android:gravity="center_horizontal|top"
                         android:layout_centerInParent="true"
-                        />
+                        android:gravity="center_horizontal|top"
+                        android:text="@string/login_re_bt_login"
+                        android:textAppearance="@style/login_re_bt_login" />
                 </RelativeLayout>
                 <!-- Login_re_button_signup_layout -->
                 <RelativeLayout
@@ -180,11 +179,10 @@
                         android:id="@+id/login_re_bt_signup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/login_re_bt_signup"
-                        android:textAppearance="@style/login_re_bt_signup"
-                        android:gravity="center_horizontal|top"
                         android:layout_centerInParent="true"
-                        />
+                        android:gravity="center_horizontal|top"
+                        android:text="@string/login_re_bt_signup"
+                        android:textAppearance="@style/login_re_bt_signup" />
                 </RelativeLayout>
                 <!-- Login_re_pwd_find -->
                 <TextView
