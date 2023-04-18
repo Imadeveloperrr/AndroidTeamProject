@@ -95,6 +95,10 @@
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="201dp">
 
+                <ImageView
+                    android:id="@+id/ex_user_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
             <RelativeLayout
