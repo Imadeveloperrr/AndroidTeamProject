@@ -158,13 +158,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="30dp"
                     android:layout_alignParentTop="true"
+                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/profile_re_ca_style"
                     android:textColor="#808080"
-                    android:clickable="true"
+                    android:text="@string/profile_re_ca_style"
                     android:textAppearance="@style/profile_re_ca_style"
                     android:gravity="top"
                     />
@@ -173,12 +171,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="109dp"
                     android:layout_alignParentTop="true"
+                    android:layout_marginLeft="109dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:textColor="#808080"
-                    android:clickable="true"
                     android:text="@string/profile_re_ca_review"
                     android:textAppearance="@style/profile_re_ca_review"
                     android:gravity="top"
@@ -188,12 +184,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="205dp"
                     android:layout_alignParentTop="true"
+                    android:layout_marginLeft="205dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:textColor="#808080"
-                    android:clickable="true"
                     android:text="@string/profile_re_ca_collection"
                     android:textAppearance="@style/profile_re_ca_collection"
                     android:gravity="top"
@@ -203,12 +197,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="330dp"
                     android:layout_alignParentTop="true"
+                    android:layout_marginLeft="330dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:textColor="#808080"
-                    android:clickable="true"
                     android:text="@string/profile_re_ca_scrap"
                     android:textAppearance="@style/profile_re_ca_scrap"
                     android:gravity="top"
@@ -222,8 +214,24 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="0dp"
-                android:layout_marginTop="687dp"
+                android:layout_marginTop="688dp"
                 android:clipToOutline="true">
+                <RelativeLayout
+                    android:id="@+id/profile_re_style_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:clipToOutline="true">
+
+                    <ImageView
+                        android:id="@+id/ex_user_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ex_kwangjin_img" />
+
+                </RelativeLayout>
+
 
             </RelativeLayout>
 

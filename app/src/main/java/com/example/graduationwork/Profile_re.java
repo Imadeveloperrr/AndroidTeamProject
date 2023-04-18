@@ -1,5 +1,6 @@
 package com.example.graduationwork;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,8 @@ public class Profile_re extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ProfileReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
 
         binding.profileReCaStyle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,17 +72,14 @@ public class Profile_re extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
+        // ImageView 클릭 이벤트 설정
+        binding.exUserImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 새로운 액티비티 생성 및 이미지 전달
+                Intent intent = new Intent(Profile_re.this, StylePage.class);
+                startActivity(intent);
+            }
+        });
     }
 }
