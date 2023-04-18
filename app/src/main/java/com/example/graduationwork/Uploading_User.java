@@ -2,7 +2,9 @@ package com.example.graduationwork;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Uploading_User {
+import java.io.Serializable;
+
+public class Uploading_User implements Serializable {
     @SerializedName("id")
     private int id;
     @SerializedName("user_email")

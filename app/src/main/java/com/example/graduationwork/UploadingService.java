@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 public interface UploadingService {
     @GET("image.php")
     Call<List<Uploading_User>> getUploading(
-            @Query("id") String id
+            @Query("user_email") String user_email
     );
 
     @FormUrlEncoded

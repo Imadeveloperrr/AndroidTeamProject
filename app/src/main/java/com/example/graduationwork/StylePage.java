@@ -2,7 +2,10 @@ package com.example.graduationwork;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.graduationwork.databinding.StylepageBinding;
+
+import java.util.List;
 
 
 public class StylePage extends AppCompatActivity {
@@ -36,7 +41,13 @@ public class StylePage extends AppCompatActivity {
         layoutParams.height = getResources().getDimensionPixelSize(R.dimen.image_height);
         binding.StylePagePicture.setLayoutParams(layoutParams);
 
-        binding.exUserImg.setImageResource(R.drawable.ex_kwangjin_img);
+        Intent list_intent = getIntent();
+        List<Uploading_User> userList = (List<Uploading_User>) list_intent.getSerializableExtra("userList");
+        Uploading_User firstUser = userList.get(0);
+        byte[] decodedBytes = Base64.decode(firstUser.getImage(), Base64.DEFAULT);
+        Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+        binding.exUserImg.setImageBitmap(decodedBitmap);
+        //binding.exUserImg.setImageResource(R.drawable.ex_kwangjin_img);
 
 
 

@@ -64,6 +64,8 @@ public class Uploading_re extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         Log.d("Uploading", "Response");
                         Toast.makeText(Uploading_re.this, "사진 업로드 성공", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Uploading_re.this, Profile_re.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(Uploading_re.this, "오류 발생", Toast.LENGTH_SHORT).show();
                     }
