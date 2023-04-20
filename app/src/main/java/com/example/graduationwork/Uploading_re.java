@@ -70,7 +70,6 @@ public class Uploading_re extends AppCompatActivity {
                         Toast.makeText(Uploading_re.this, "오류 발생", Toast.LENGTH_SHORT).show();
                     }
                 }
-
                 @Override
                 public void onFailure(Call<Uploading_User> call, Throwable t) {
                     Log.e("Server Fail", "Error: " + t.getMessage());

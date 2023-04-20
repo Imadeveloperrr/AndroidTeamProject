@@ -29,10 +29,8 @@
                     android:id="@+id/oo_td"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="187dp"
-                    android:layout_marginTop="146dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:gravity="top"
                     android:text="@string/oo_td"
                     android:textAppearance="@style/oo_td" />
