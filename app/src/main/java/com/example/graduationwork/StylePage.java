@@ -41,6 +41,7 @@ public class StylePage extends AppCompatActivity {
 
 
 
+
         binding.styleBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

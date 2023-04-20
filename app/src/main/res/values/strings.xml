@@ -62,4 +62,9 @@
     <string name="homepage_main_search">Search</string>
     <string name="homepage_main_id">실시간 랭킹</string>
     <string name="homepage_main_id2">오늘의 OOTD</string>
+    <string name="uploading_re_comment_logo">사진 올리기</string>
+    <string name="uploading_re_comment_Back">Back</string>
+    <string name="uploading_re_comment_ex">제목을 입력하세요.</string>
+    <string name="uploading_re_comment_register">등록하기</string>
+
 </resources>

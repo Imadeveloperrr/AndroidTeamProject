@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/uploading_re_comment_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- Uploading_re_comment_header -->
+            <RelativeLayout
+                android:id="@+id/uploading_re_comment_header"
+                android:layout_width="411dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:clipToOutline="true">
+                <!-- Uploading_re_comment_logo -->
+                <TextView
+                    android:id="@+id/uploading_re_comment_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginRight="130dp"
+                    android:layout_marginBottom="47dp"
+                    android:gravity="top"
+                    android:text="@string/uploading_re_comment_logo"
+                    android:textAppearance="@style/uploading_re_comment_logo" />
+                <!-- Uploading_re_comment_Back -->
+                <TextView
+                    android:id="@+id/uploading_re_comment_Back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="334dp"
+                    android:layout_marginBottom="47dp"
+                    android:gravity="top"
+                    android:text="@string/uploading_re_comment_Back"
+                    android:textAppearance="@style/uploading_re_comment_Back" />
+            </RelativeLayout>
+            <!-- Uploading_re_comment_picture -->
+            <RelativeLayout
+                android:id="@+id/uploading_re_comment_picture"
+                android:layout_width="411dp"
+                android:layout_height="411dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="101dp"
+                android:clipToOutline="true">
+            </RelativeLayout>
+            <!-- Uploading_re_comment_button -->
+            <RelativeLayout
+                android:id="@+id/uploading_re_comment_button"
+                android:layout_width="411dp"
+                android:layout_height="416dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="511dp"
+                android:clipToOutline="true">
+                <!-- Uploading_re_comment_box_layout -->
+                <RelativeLayout
+                    android:id="@+id/uploading_re_comment_box_layout"
+                    android:layout_width="390dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="85dp"
+                    android:clipToOutline="true">
+                    <!-- Uploading_re_comment_button_box -->
+                    <View
+                        android:id="@+id/uploading_re_comment_button_box"
+                        android:layout_width="347dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="22dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="18dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/uploading_re_comment_ex"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginTop="19dp"
+                        android:gravity="top"
+                        android:hint="@string/uploading_re_comment_ex"
+                        android:textAppearance="@style/uploading_re_comment_ex"
+                        />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/uploading_re_comment_register"
+                    android:layout_width="61dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="175dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="198dp"
+                    android:text="@string/uploading_re_comment_register"
+                    android:textAppearance="@style/uploading_re_comment_register"
+                    android:gravity="top"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
