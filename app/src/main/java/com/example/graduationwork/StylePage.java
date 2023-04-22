@@ -41,10 +41,9 @@ public class StylePage extends AppCompatActivity {
         layoutParams.height = getResources().getDimensionPixelSize(R.dimen.image_height);
         binding.StylePagePicture.setLayoutParams(layoutParams);
 
-        Intent list_intent = getIntent();
-        List<Uploading_User> userList = (List<Uploading_User>) list_intent.getSerializableExtra("userList");
-        Uploading_User firstUser = userList.get(0);
-        byte[] decodedBytes = Base64.decode(firstUser.getImage(), Base64.DEFAULT);
+        Intent userIntent = getIntent();
+        Uploading_User selectedUser = (Uploading_User) userIntent.getSerializableExtra("selectedUser");
+        byte[] decodedBytes = Base64.decode(selectedUser.getImage(), Base64.DEFAULT);
         Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
         binding.exUserImg.setImageBitmap(decodedBitmap);
         //binding.exUserImg.setImageResource(R.drawable.ex_kwangjin_img);

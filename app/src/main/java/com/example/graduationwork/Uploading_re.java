@@ -2,6 +2,7 @@ package com.example.graduationwork;
 
 
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.exifinterface.media.ExifInterface;
 
 import com.example.graduationwork.databinding.UploadingReBinding;
 
@@ -82,7 +84,7 @@ public class Uploading_re extends AppCompatActivity {
         try {
             Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, outputStream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 30, outputStream);
             byte[] imageBytes = outputStream.toByteArray();
             return Base64.encodeToString(imageBytes, Base64.DEFAULT);
         } catch (IOException e) {
