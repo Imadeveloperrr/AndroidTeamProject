@@ -15,7 +15,7 @@
             android:layout_height="match_parent">
 
             <RelativeLayout
-                android:id="@+id/profile_re"
+                android:id="@+id/profile_re_"
                 android:layout_width="411dp"
                 android:layout_height="377dp"
                 android:layout_alignParentLeft="true"
@@ -29,10 +29,8 @@
                     android:id="@+id/oo_td"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="187dp"
-                    android:layout_marginTop="146dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:gravity="top"
                     android:text="@string/oo_td"
                     android:textAppearance="@style/oo_td" />
@@ -207,7 +205,7 @@
                     />
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/profile_re_show_img"
                 android:layout_width="411dp"
                 android:layout_height="214dp"
@@ -215,24 +213,17 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="688dp"
-                android:clipToOutline="true">
-                <RelativeLayout
-                    android:id="@+id/profile_re_style_img"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:clipToOutline="true">
+                android:clipToOutline="true"
+                android:orientation="horizontal">
+                <GridView
+                    android:id="@+id/image_grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth" />
 
-                    <ImageView
-                        android:id="@+id/ex_user_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ex_kwangjin_img" />
-                </RelativeLayout>
-            </RelativeLayout>
+            </LinearLayout>
 
         </RelativeLayout>
-
     </ScrollView>
 </RelativeLayout>

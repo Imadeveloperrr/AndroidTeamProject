@@ -1,5 +1,6 @@
 package com.example.graduationwork;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.graduationwork.databinding.HomepageReBinding;
 import com.example.graduationwork.databinding.LoginReBinding;
 
 import retrofit2.Call;
@@ -46,6 +48,14 @@ public class Login_re extends AppCompatActivity {
                 loginUser(email, password);
             }
         });
+
+        binding.loginReBtSignupLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login_re.this, Signup_re.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loginUser(String email, String password) {
@@ -60,6 +70,14 @@ public class Login_re extends AppCompatActivity {
                     String name = user.getName();
                     String number = user.getNumber();
                     Toast.makeText(Login_re.this, "이름 : " + name + ", 번호 : " + number, Toast.LENGTH_SHORT).show();
+                    binding.loginReBtLogin.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Login_re.this, Homepage_re.class);
+                            startActivity(intent);
+                        }
+                    });
                 } else {
                     Toast.makeText(Login_re.this, "실패", Toast.LENGTH_SHORT).show();
                 }
