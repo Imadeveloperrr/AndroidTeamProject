@@ -80,6 +80,12 @@
                     android:gravity="top"
                     />
 
+                <View
+                    android:id="@+id/homepage_content_con_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></View>
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -107,12 +113,6 @@
                     android:layout_below="@id/homepage_main_id"
                     android:weightSum="2"
                     android:orientation="horizontal">
-                    <View
-                        android:id="@+id/homepage_content_con_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-                    </View>
 
                     <View
                         android:id="@+id/homepage_content_con_2"
@@ -433,8 +433,54 @@
                         android:textColor="#757575"
                         android:textSize="18sp"
                         />
+
                 </LinearLayout>
             </RelativeLayout>
+
         </RelativeLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="82dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/serch"
+            android:layout_width="82dp"
+            android:layout_height="38dp"
+            android:layout_toRightOf="@+id/home"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/serch" />
+
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/serch"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/check" />
+
+        <ImageView
+            android:id="@+id/message"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/check"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/message" />
+
+        <ImageView
+            android:id="@+id/my"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/message"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/my" />
+    </RelativeLayout>
 </RelativeLayout>
