@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.exifinterface.media.ExifInterface;
 
 import com.example.graduationwork.databinding.UploadingReBinding;
 
