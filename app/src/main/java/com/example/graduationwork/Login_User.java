@@ -1,6 +1,8 @@
 package com.example.graduationwork;
 
-public class Login_User {
+import java.io.Serializable;
+
+public class Login_User implements Serializable {
     private int seq;
     private String email;
     private String pw;

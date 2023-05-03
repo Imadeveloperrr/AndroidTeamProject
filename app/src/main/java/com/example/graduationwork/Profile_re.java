@@ -58,11 +58,10 @@ public class Profile_re extends AppCompatActivity {
                         imageList.add(bitmap);
                     }
 
-                    GridView gridView = findViewById(R.id.image_grid_view);
                     ImageAdapter imageAdapter = new ImageAdapter(Profile_re.this, imageList);
-                    gridView.setAdapter(imageAdapter);
+                    binding.imageGridView.setAdapter(imageAdapter);
 
-                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    binding.imageGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             onImageViewClicked(position);
