@@ -187,5 +187,49 @@
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="82dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/home" />
+
+        <ImageView
+            android:id="@+id/serch"
+            android:layout_width="82dp"
+            android:layout_height="38dp"
+            android:layout_toRightOf="@+id/home"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/serch" />
+
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/serch"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/check" />
+
+        <ImageView
+            android:id="@+id/message"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/check"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/message" />
+
+        <ImageView
+            android:id="@+id/my"
+            android:layout_width="82dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/message"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/my" />
+
+    </RelativeLayout>
 </RelativeLayout>
 

@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import androidx.exifinterface.media.ExifInterface;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -37,6 +36,7 @@ public class Profile_re extends AppCompatActivity {
     private ProfileReBinding binding;
     private boolean isGray = false;
     private List<Uploading_User> userList;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +130,22 @@ public class Profile_re extends AppCompatActivity {
                     binding.profileReCaScrap.setTextColor(Color.GRAY);
                     isGray = true;
                 }
+            }
+        });
+
+        binding.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile_re.this, Homepage_re.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile_re.this, Uploading_re.class);
+                startActivity(intent);
             }
         });
 

@@ -36,6 +36,14 @@ public class Uploading_re extends AppCompatActivity {
 
         apiInterface = ApiClient.getClient().create(UploadingService.class);
 
+        binding.uploadingReBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                Intent intent = new Intent(Uploading_re.this, Homepage_re.class);
+                startActivity(intent);
+            }
+        });
+
 
         binding.styleUpload.setOnClickListener(new View.OnClickListener() {
             @Override

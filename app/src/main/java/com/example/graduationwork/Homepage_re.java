@@ -28,6 +28,14 @@ public class Homepage_re extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.my.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage_re.this, Profile_re.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 
