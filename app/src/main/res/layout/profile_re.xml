@@ -159,7 +159,6 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#808080"
                     android:text="@string/profile_re_ca_style"
                     android:textAppearance="@style/profile_re_ca_style"
                     android:gravity="top"

@@ -9,19 +9,29 @@ import android.util.Base64;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.graduationwork.databinding.StylepageBinding;
 
-import java.util.List;
+
 
 
 public class StylePage extends AppCompatActivity {
     private StylepageBinding binding;
-    private ImageView imageView;
+    private ImageView likeimage;
+    private ImageView like2image;
+    private TextView likeCountTextView;
+    private int likeCount = 0;
+
+
+
+
+
+
 
 
     @Override
@@ -57,6 +67,7 @@ public class StylePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         binding.StylePageCommentsEx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +76,46 @@ public class StylePage extends AppCompatActivity {
             }
         });
 
+        // 좋아요 기능 구현
+        likeimage = binding.likeImage;
+        like2image = binding.like2Image;
+
+        // 좋아요 카운터
+        likeCountTextView = binding.likeCountTextView;
+
+
+        // 이미지뷰 클릭 리스너 설정
+        likeimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 좋아요 카운터 증가
+                likeCount++;
+                likeCountTextView.setText(String.valueOf(likeCount));
+                toggleImage();
+            }
+        });
+        like2image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 좋아요 카운터 감소
+                likeCount--;
+                likeCountTextView.setText(String.valueOf(likeCount));
+                toggleImage();
+            }
+        });
+
+
+
+    }
+    protected void toggleImage() {
+        // 클릭 전 이미지뷰가 보이면 클릭 후 이미지뷰로 전환하고, 그 반대의 경우도 마찬가지로 전환.
+        if (likeimage.getVisibility() == View.VISIBLE) {
+            likeimage.setVisibility(View.GONE);
+            like2image.setVisibility(View.VISIBLE);
+        } else {
+            likeimage.setVisibility(View.VISIBLE);
+            like2image.setVisibility(View.GONE);
+        }
 
     }
 }

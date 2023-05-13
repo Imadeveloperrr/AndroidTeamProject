@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.graduationwork.databinding.CommentspageBinding;
 
+
 public class CommentsPage extends AppCompatActivity {
 
     private CommentspageBinding binding;

@@ -85,10 +85,10 @@ public class Profile_re extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isGray) {
-                    binding.profileReCaStyle.setTextColor(Color.BLACK);
+                    binding.profileReCaStyle.setTextColor(Color.GRAY);
                     isGray = false;
                 } else {
-                    binding.profileReCaStyle.setTextColor(Color.GRAY);
+                    binding.profileReCaStyle.setTextColor(Color.BLACK);
                     isGray = true;
                 }
             }

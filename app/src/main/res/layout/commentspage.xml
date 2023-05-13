@@ -6,12 +6,15 @@
     android:layout_height="fill_parent"
     android:clipToOutline="true">
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
             <RelativeLayout
                 android:id="@+id/comments_header"
@@ -20,6 +23,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:clipToOutline="true">
+
 
                 <TextView
                     android:id="@+id/comments_back"
@@ -80,7 +84,6 @@
                     android:gravity="top"
                     />
             </RelativeLayout>
-
             <View
                 android:id="@+id/comments_Register"
                 android:layout_width="411dp"
@@ -108,7 +111,8 @@
                 android:layout_marginLeft="365dp"
                 android:layout_marginTop="710dp"
                 android:src="@drawable/point" />
-
         </RelativeLayout>
+
     </ScrollView>
+
 </RelativeLayout>
