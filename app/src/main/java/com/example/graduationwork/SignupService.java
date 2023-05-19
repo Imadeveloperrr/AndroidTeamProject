@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 
 public interface SignupService {
     @FormUrlEncoded
-    @POST("Resitest.php")
+    @POST("register.php")
     Call<JsonObject> registerUser(
             @Field("email") String email,
             @Field("pw") String pw,

@@ -14,6 +14,19 @@ public class Login_User implements Serializable {
     private String tall;
     private int post;
     private int follower;
+    private static Login_User instance;
+
+    private Login_User() {
+
+    }
+
+    public static Login_User getInstance() {
+        if (instance == null) {
+            instance = new Login_User();
+        }
+        return instance;
+    }
+
 
     public int getPost() {
         return post;
@@ -52,6 +65,7 @@ public class Login_User implements Serializable {
     }
 
     private int following;
+
     public int getSeq() {
         return seq;
     }

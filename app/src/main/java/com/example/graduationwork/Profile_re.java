@@ -9,17 +9,23 @@ import android.graphics.Matrix;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 import androidx.exifinterface.media.ExifInterface;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.graduationwork.databinding.ProfileReBinding;
 
 import java.io.ByteArrayInputStream;
@@ -50,23 +56,12 @@ public class Profile_re extends AppCompatActivity {
             public void onResponse(Call<List<Uploading_User>> call, Response<List<Uploading_User>> response) {
                 if (response.isSuccessful()) {
                     userList = response.body();
-                    ArrayList<Bitmap> imageList = new ArrayList<>();
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    profileFragment.setUserList(userList); // Set the userList in the fragment.
 
-                    for (int i = 0; i < userList.size(); i++) {
-                        Uploading_User user = userList.get(i);
-                        Bitmap bitmap = setImageFromBase64(user.getImage());
-                        imageList.add(bitmap);
-                    }
-
-                    ImageAdapter imageAdapter = new ImageAdapter(Profile_re.this, imageList);
-                    binding.imageGridView.setAdapter(imageAdapter);
-
-                    binding.imageGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            onImageViewClicked(position);
-                        }
-                    });
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.profile_re_show_img, profileFragment);
+                    transaction.commit();
                 } else {
                     Toast.makeText(Profile_re.this, "실패", Toast.LENGTH_SHORT).show();
                     Log.d("success", "response content : " + response.body());
@@ -148,45 +143,49 @@ public class Profile_re extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public class ImageAdapter extends BaseAdapter {
+    public static class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
+        interface OnItemClickListener {
+            void onItemClick(int position);
+        }
         private Context mContext;
         private ArrayList<Bitmap> mImageList;
+        private OnItemClickListener listener;
 
         public ImageAdapter(Context context, ArrayList<Bitmap> imageList) {
             mContext = context;
             mImageList = imageList;
         }
+        public void setOnItemClickListener(OnItemClickListener listener) {
+            this.listener = listener;
+        }
+        @NonNull
+        @Override
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            ImageView imageView = new ImageView(mContext);
+            int imageSizeInPixels = (int) (137 * mContext.getResources().getDisplayMetrics().density);
+            imageView.setLayoutParams(new RecyclerView.LayoutParams(imageSizeInPixels, imageSizeInPixels));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+            return new ViewHolder(imageView);
+        }
 
         @Override
-        public int getCount() {
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+            holder.imageView.setImageBitmap(mImageList.get(position));
+        }
+
+        @Override
+        public int getItemCount() {
             return mImageList.size();
         }
 
-        @Override
-        public Object getItem(int position) {
-            return mImageList.get(position);
-        }
+        public static class ViewHolder extends RecyclerView.ViewHolder {
+            public ImageView imageView;
 
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                imageView = new ImageView(mContext);
-                int imageSizeInPixels = (int) (137 * mContext.getResources().getDisplayMetrics().density);
-                imageView.setLayoutParams(new GridView.LayoutParams(imageSizeInPixels, imageSizeInPixels));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            } else {
-                imageView = (ImageView) convertView;
+            public ViewHolder(@NonNull ImageView itemView) {
+                super(itemView);
+                imageView = itemView;
             }
-
-            imageView.setImageBitmap(mImageList.get(position));
-            return imageView;
         }
     }
 

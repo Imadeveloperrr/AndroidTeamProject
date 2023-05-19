@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 
 public interface LoginService {
     @FormUrlEncoded
-    @POST("Logtest.php")
+    @POST("login.php")
     Call<Login_User> login(
             @Field("email") String email,
             @Field("pw") String pw

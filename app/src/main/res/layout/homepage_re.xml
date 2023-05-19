@@ -87,26 +87,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="195dp"
                 android:clipToOutline="true">
+
                 <TextView
                     android:id="@+id/homepage_main_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
                     android:layout_marginLeft="16dp"
                     android:layout_marginBottom="20dp"
-                    android:layout_alignParentTop="true"
                     android:text="@string/homepage_main_id"
-                    android:textAppearance="@style/homepage_main_id"
-                    />
+                    android:textAppearance="@style/homepage_main_id" />
+
                 <LinearLayout
                     android:id="@+id/homepage_content_con"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_below="@id/homepage_main_id"
-                    android:weightSum="2"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="2">
                     <View
                         android:id="@+id/homepage_content_con_1"
                         android:layout_width="match_parent"
@@ -118,8 +119,7 @@
                         android:id="@+id/homepage_content_con_2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1">
-                    </View>
+                        android:layout_weight="1"></View>
                 </LinearLayout>
 
                 <LinearLayout
@@ -128,28 +128,28 @@
                     android:layout_height="50dp"
                     android:layout_below="@id/homepage_content_con"
                     android:layout_centerInParent="true"
-                    android:weightSum="5"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="5">
+
                     <TextView
                         android:id="@+id/homepage_content_tv_title2"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="180dp"
+                        android:layout_weight="2.5"
                         android:text="유광진"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/homepage_content_tv_content2"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="180dp"
+                        android:layout_weight="2.5"
                         android:text="190 . 65kg . 270mm"
                         android:textColor="#757575"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -157,28 +157,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_below="@id/homepage_content_con"
-                    android:weightSum="5"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="5">
+
                     <TextView
                         android:id="@+id/homepage_content_tv_title"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="20dp"
+                        android:layout_weight="2.5"
                         android:text="이성호"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/homepage_content_tv_content"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="20dp"
+                        android:layout_weight="2.5"
                         android:text="190 . 65kg . 270mm"
                         android:textColor="#757575"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -187,18 +187,20 @@
                     android:layout_height="250dp"
                     android:layout_below="@id/homepage_content_con"
                     android:layout_marginTop="50dp"
-                    android:weightSum="2"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
                     <View
                         android:id="@+id/content_con_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1" />
+
                     <View
                         android:id="@+id/content_con_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -207,28 +209,28 @@
                     android:layout_height="50dp"
                     android:layout_below="@id/homepage_content_con2"
                     android:layout_centerInParent="true"
-                    android:weightSum="5"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="5">
+
                     <TextView
                         android:id="@+id/homepage_content_tv_title3"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="180dp"
+                        android:layout_weight="2.5"
                         android:text="이성호"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/homepage_content_tv_content3"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="180dp"
+                        android:layout_weight="2.5"
                         android:text="190 . 65kg . 270mm"
                         android:textColor="#757575"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -236,28 +238,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_below="@id/homepage_content_con2"
-                    android:weightSum="5"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="5">
+
                     <TextView
                         android:id="@+id/homepage_content_tv_title4"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="20dp"
+                        android:layout_weight="2.5"
                         android:text="김민우"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
+
                     <TextView
                         android:id="@+id/homepage_content_tv_content4"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
                         android:layout_marginLeft="20dp"
+                        android:layout_weight="2.5"
                         android:text="190 . 65kg . 270mm"
                         android:textColor="#757575"
-                        android:textSize="18sp"
-                        />
+                        android:textSize="18sp" />
                 </LinearLayout>
             </RelativeLayout>
 

@@ -215,12 +215,7 @@
                 android:layout_marginTop="688dp"
                 android:clipToOutline="true"
                 android:orientation="horizontal">
-                <GridView
-                    android:id="@+id/image_grid_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:numColumns="3"
-                    android:stretchMode="columnWidth" />
+
 
             </LinearLayout>
 

@@ -62,4 +62,6 @@
     <string name="homepage_main_search">Search</string>
     <string name="homepage_main_id">실시간 랭킹</string>
     <string name="homepage_main_id2">오늘의 OOTD</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
