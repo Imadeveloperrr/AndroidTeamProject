@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import com.bumptech.glide.Glide;
 import com.example.graduationwork.databinding.StylepageBinding;
 
 import java.util.List;
@@ -43,9 +44,7 @@ public class StylePage extends AppCompatActivity {
 
         Intent userIntent = getIntent();
         Uploading_User selectedUser = (Uploading_User) userIntent.getSerializableExtra("selectedUser");
-        byte[] decodedBytes = Base64.decode(selectedUser.getImage(), Base64.DEFAULT);
-        Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
-        binding.exUserImg.setImageBitmap(decodedBitmap);
+        Glide.with(this).load(selectedUser.getImage()).centerCrop().into(binding.exUserImg);
         //binding.exUserImg.setImageResource(R.drawable.ex_kwangjin_img);
 
 
