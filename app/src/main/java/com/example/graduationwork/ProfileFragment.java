@@ -28,7 +28,7 @@ public class ProfileFragment extends Fragment {
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3)); // 3열로 나누는 그리드 레이아웃 사용
         recyclerView.setAdapter(new ImageAdapter(userList));
-
+        recyclerView.setNestedScrollingEnabled(false);
         return rootView;
     }
 
