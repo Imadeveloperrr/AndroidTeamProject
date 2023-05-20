@@ -1,6 +1,7 @@
 package com.example.graduationwork;
 
 
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.net.Uri;
@@ -13,10 +14,21 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.exifinterface.media.ExifInterface;
 
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferListener;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
+import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
 import com.example.graduationwork.databinding.UploadingReBinding;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 
 import retrofit2.Call;
@@ -27,7 +39,9 @@ public class Uploading_re extends AppCompatActivity {
     View View;
     private UploadingReBinding binding;
     private UploadingService apiInterface;
-
+    private AmazonS3 s3Client;
+    private String bucketName = "sunghobucket";
+    private String region = "ap-northeast-2";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +58,8 @@ public class Uploading_re extends AppCompatActivity {
             }
         });
 
+        s3Client = new AmazonS3Client(new BasicAWSCredentials("AKIAYGFTFCC7AI7AODD6", "RgA2qnuUzhSQCjfSh3Zwz9sVN+UtojDCtuaUBu/M"));
+        s3Client.setRegion(Region.getRegion(Regions.fromName(region)));
 
         binding.styleUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,42 +77,67 @@ public class Uploading_re extends AppCompatActivity {
 
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
             Uri imageUri = data.getData();
-            String base64Image = imageToBase64(imageUri);
-            Login_User user = new Login_User();
-            //String user_email = user.getEmail();
-            String user_email = "ddooochii@gmail.com";
-            String title = "테스트";
-            Call<Uploading_User> call = apiInterface.insertUploading(user_email, title, base64Image);
-            call.enqueue(new Callback<Uploading_User>() {
+
+            String path = getPath(imageUri);
+
+            TransferUtility transferUtility = TransferUtility.builder().s3Client(s3Client).context(this).build();
+            String key = "images/" + new File(path).getName();
+            TransferObserver uploadObserver = transferUtility.upload(bucketName, key, new File(path));
+
+            uploadObserver.setTransferListener(new TransferListener() {
                 @Override
-                public void onResponse(Call<Uploading_User> call, Response<Uploading_User> response) {
-                    if (response.isSuccessful()) {
-                        Log.d("Uploading", "Response");
-                        Toast.makeText(Uploading_re.this, "사진 업로드 성공", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Uploading_re.this, Profile_re.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(Uploading_re.this, "오류 발생", Toast.LENGTH_SHORT).show();
+                public void onStateChanged(int id, TransferState state) {
+                    if (TransferState.COMPLETED == state) {
+                        String url = "https://" + bucketName + ".s3." + region + ".amazonaws.com/" + key;
+                        uploadImageUrl(url);
                     }
                 }
+
                 @Override
-                public void onFailure(Call<Uploading_User> call, Throwable t) {
-                    Log.e("Server Fail", "Error: " + t.getMessage());
+                public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
+
+                }
+
+                @Override
+                public void onError(int id, Exception ex) {
+
                 }
             });
         }
     }
 
-    private String imageToBase64(Uri imageUri) {
-        try {
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 30, outputStream);
-            byte[] imageBytes = outputStream.toByteArray();
-            return Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+    private void uploadImageUrl(String imageUrl) {
+        Login_User user = Login_User.getInstance();
+        //String user_email = user.getEmail();
+        String user_email = "ddooochii@gmail.com";
+        String title = "테스트";
+        Call<Uploading_User> call = apiInterface.insertUploading(user_email, title, imageUrl);
+        call.enqueue(new Callback<Uploading_User>() {
+            @Override
+            public void onResponse(Call<Uploading_User> call, Response<Uploading_User> response) {
+                if (response.isSuccessful()) {
+                    Log.d("Uploading", "Response");
+                    Toast.makeText(Uploading_re.this, "사진 업로드 성공", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Uploading_re.this, Profile_re.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Uploading_re.this, "오류 발생", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<Uploading_User> call, Throwable t) {
+                Log.e("Server Fail", "Error: " + t.getMessage());
+            }
+        });
+    }
+
+    private String getPath(Uri uri) {
+        String[] projection = {MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
+        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        String path = cursor.getString(column_index);
+        cursor.close();
+        return path;
     }
 }

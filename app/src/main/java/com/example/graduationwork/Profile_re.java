@@ -9,16 +9,23 @@ import android.graphics.Matrix;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.exifinterface.media.ExifInterface;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.graduationwork.databinding.ProfileReBinding;
 
 import java.io.ByteArrayInputStream;
@@ -36,7 +43,7 @@ public class Profile_re extends AppCompatActivity {
     private ProfileReBinding binding;
     private boolean isGray = false;
     private List<Uploading_User> userList;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,24 +57,12 @@ public class Profile_re extends AppCompatActivity {
             public void onResponse(Call<List<Uploading_User>> call, Response<List<Uploading_User>> response) {
                 if (response.isSuccessful()) {
                     userList = response.body();
-                    ArrayList<Bitmap> imageList = new ArrayList<>();
+                    ProfileFragment profileFragment = new ProfileFragment();
+                    profileFragment.setUserList(userList); // Set the userList in the fragment.
 
-                    for (int i = 0; i < userList.size(); i++) {
-                        Uploading_User user = userList.get(i);
-                        Bitmap bitmap = setImageFromBase64(user.getImage());
-                        imageList.add(bitmap);
-                    }
-
-                    GridView gridView = findViewById(R.id.image_grid_view);
-                    ImageAdapter imageAdapter = new ImageAdapter(Profile_re.this, imageList);
-                    gridView.setAdapter(imageAdapter);
-
-                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            onImageViewClicked(position);
-                        }
-                    });
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.profile_re_show_img, profileFragment);
+                    transaction.commit();
                 } else {
                     Toast.makeText(Profile_re.this, "실패", Toast.LENGTH_SHORT).show();
                     Log.d("success", "response content : " + response.body());
@@ -150,62 +145,5 @@ public class Profile_re extends AppCompatActivity {
         });
 
     }
-    private Bitmap setImageFromBase64(String base64Image) {
-        // Base64 형식의 이미지를 디코딩
-        byte[] decodedBytes = Base64.decode(base64Image, Base64.DEFAULT);
-        // 디코딩된 바이트를 비트맵으로 변환
-        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
-    }
-
-    private void onImageViewClicked(int position) {
-        // 여기에 이미지뷰를 클릭했을 때 수행할 작업을 작성합니다.
-        Uploading_User selectedUser = userList.get(position);
-        Intent intent = new Intent(Profile_re.this, StylePage.class);
-        intent.putExtra("selectedUser", selectedUser);
-        startActivity(intent);
-    }
-
-    public class ImageAdapter extends BaseAdapter {
-        private Context mContext;
-        private ArrayList<Bitmap> mImageList;
-
-        public ImageAdapter(Context context, ArrayList<Bitmap> imageList) {
-            mContext = context;
-            mImageList = imageList;
-        }
-
-        @Override
-        public int getCount() {
-            return mImageList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return mImageList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-
-            if (convertView == null) {
-                imageView = new ImageView(mContext);
-                int imageSizeInPixels = (int) (137 * mContext.getResources().getDisplayMetrics().density);
-                imageView.setLayoutParams(new GridView.LayoutParams(imageSizeInPixels, imageSizeInPixels));
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            } else {
-                imageView = (ImageView) convertView;
-            }
-
-            imageView.setImageBitmap(mImageList.get(position));
-            return imageView;
-        }
-    }
-
 
 }
