@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -17,8 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.graduationwork.databinding.StylepageBinding;
+import com.google.gson.JsonObject;
 
+import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class StylePage extends AppCompatActivity {
@@ -28,7 +34,8 @@ public class StylePage extends AppCompatActivity {
     private TextView likeCountTextView;
     private int likeCount = 0;
 
-
+    private StylePageService apiInterface;
+    private Uploading_User selectedUser;
 
 
     @Override
@@ -37,6 +44,7 @@ public class StylePage extends AppCompatActivity {
         binding = StylepageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        apiInterface = ApiClient.getClient().create(StylePageService.class);
         // StylePage 액티비티에서 사진을 표시하는 레이아웃을 가져오고,
         // 뷰바인딩을 사용하여 레이아웃 내부의 ImageView를 참조하는 코드
 
@@ -49,8 +57,8 @@ public class StylePage extends AppCompatActivity {
         binding.StylePagePicture.setLayoutParams(layoutParams);
 
         Intent userIntent = getIntent();
-        Uploading_User selectedUser = (Uploading_User) userIntent.getSerializableExtra("selectedUser");
-        Glide.with(this).load(selectedUser.getImage()).centerCrop().into(binding.exUserImg);
+        selectedUser = (Uploading_User) userIntent.getSerializableExtra("selectedUser");
+        Glide.with(this).load(selectedUser.getImage()).into(binding.exUserImg);
         //binding.exUserImg.setImageResource(R.drawable.ex_kwangjin_img);
 
 
@@ -113,4 +121,35 @@ public class StylePage extends AppCompatActivity {
         }
 
     }
+
+    private void post_like() {
+        Login_User user = Login_User.getInstance();
+        //String user_email = user.getEmail();
+        String like_email = "ddooochii@gmail.com";
+        int post_id = selectedUser.getId();
+        int post_like = selectedUser.getPostlike();
+
+        Call<List<JsonObject>> call = apiInterface.likeUser(post_id, like_email, post_like);
+        call.enqueue(new Callback<List<JsonObject>>() {
+            @Override
+            public void onResponse(Call<List<JsonObject>> call, Response<List<JsonObject>> response) {
+                if (response.isSuccessful()) {
+                    Log.d("postlike", "Success");
+                    List<JsonObject> responseBody = response.body();
+                    JsonObject firstobject = response.body().get(0); // 첫번째 인덱스에서 postlike 갖고오고
+                    selectedUser.setPostlike(firstobject.get("postlike").getAsInt());
+                    for (JsonObject jsonObject : responseBody) {
+                        // 여기다가 마저 작업하자.
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<JsonObject>> call, Throwable t) {
+
+            }
+        });
+    }
+
+
 }
