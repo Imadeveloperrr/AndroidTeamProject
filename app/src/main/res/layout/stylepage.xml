@@ -87,6 +87,16 @@
                     android:textAppearance="@style/Style_page_info_body"
                     android:gravity="top"
                     />
+
+                <ImageView
+                    android:id="@+id/Style_page_options"
+                    android:layout_width="35dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="349dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/options" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -130,7 +140,7 @@
                     android:layout_height="21dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginLeft="48dp"
+                    android:layout_marginLeft="55dp"
                     android:layout_marginTop="16dp"
                     android:gravity="top" />
 
@@ -149,7 +159,7 @@
                     android:id="@+id/comments_image"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/comments" />
 
@@ -174,7 +184,6 @@
                     android:textAppearance="@style/style_page_comments_ex"
                     android:gravity="top"
                     />
-
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
