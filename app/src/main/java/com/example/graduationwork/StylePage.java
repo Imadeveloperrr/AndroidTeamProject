@@ -112,20 +112,13 @@ public class StylePage extends AppCompatActivity {
         // 클릭 전 이미지뷰가 보이면 클릭 후 이미지뷰로 전환하고, 그 반대의 경우도 마찬가지로 전환.
         //Login_User user = Login_User.getInstance();
         //if (like_people.contains(user.getEmail())) {
-        if (like_people.contains("ddooochii@gmail.com")) {
+        if (like_people.contains("ddooochii@gmail.com")) { // 테스트할때만 ddooochii@daum.net 사용!
             likeimage.setVisibility(View.GONE);
             like2image.setVisibility(View.VISIBLE);
         } else {
             likeimage.setVisibility(View.VISIBLE);
             like2image.setVisibility(View.GONE);
         }
-//        if (likeimage.getVisibility() == View.VISIBLE) {
-//            likeimage.setVisibility(View.GONE);
-//            like2image.setVisibility(View.VISIBLE);
-//        } else {
-//            likeimage.setVisibility(View.VISIBLE);
-//            like2image.setVisibility(View.GONE);
-//        }
     }
 
     private void post_like(int type) { // 0 실시간확인, 1 증가, 2감소
@@ -139,21 +132,35 @@ public class StylePage extends AppCompatActivity {
         else if(type == 2)
             post_like--;
 
-        Call<List<JsonObject>> call = apiInterface.likeUser(post_id, like_email, post_like);
+        Call<List<JsonObject>> call = apiInterface.likeUser(post_id, like_email, post_like, type);
         call.enqueue(new Callback<List<JsonObject>>() {
             @Override
             public void onResponse(Call<List<JsonObject>> call, Response<List<JsonObject>> response) {
                 if (response.isSuccessful()) {
                     Log.d("postlike", "Success");
                     List<JsonObject> responseBody = response.body();
-                    JsonObject firstobject = response.body().get(0); // 첫번째 인덱스에서 postlike 갖고오고
-                    selectedUser.setPostlike(firstobject.get("postlike").getAsInt());
-                    selectedUser.setId(firstobject.get("id").getAsInt());
-                    for (JsonObject jsonObject : responseBody) {
-                        like_people.add(jsonObject.get("like_emial").getAsString());
+                    if(!responseBody.isEmpty()) {
+                        JsonObject firstobject = response.body().get(0); // 첫번째 인덱스에서 postlike 갖고오고
+                        selectedUser.setPostlike(firstobject.get("postlike").getAsInt());
+                        if(firstobject.has("id") && firstobject.has("like_email")) {
+                            if(!firstobject.get("id").isJsonNull()) {
+                                selectedUser.setId(firstobject.get("id").getAsInt());
+                                for (JsonObject jsonObject : responseBody) {
+                                    like_people.add(jsonObject.get("like_email").getAsString());
+                                }
+                            }
+                            else {
+                                if(like_people.contains("ddooochii@gmail.com")) { // ddooochii@daum.net은 user_email로 변경할것!
+                                    like_people.remove("ddooochii@gmail.com");
+                                }
+                            }
+                        }
+                        likeCountTextView.setText(String.valueOf(selectedUser.getPostlike()));
+                        toggleImage();
                     }
-                    likeCountTextView.setText(String.valueOf(selectedUser.getPostlike()));
-                    toggleImage();
+                    else {
+                        Log.d("postlike", "Response body is empty maybe type zero");
+                    }
                 }
             }
 

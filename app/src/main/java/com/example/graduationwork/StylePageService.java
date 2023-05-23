@@ -15,6 +15,7 @@ public interface StylePageService {
     Call<List<JsonObject>> likeUser(
             @Query("id") int id,
             @Query("like_email") String like_email,
-            @Query("postlike") int postlike
+            @Query("postlike") int postlike,
+            @Query("type") int type
     );
 }
