@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.graduationwork.databinding.StylepageBinding;
 import com.google.gson.JsonObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,6 +38,7 @@ public class StylePage extends AppCompatActivity {
     private StylePageService apiInterface;
     private Uploading_User selectedUser;
 
+    private List<String> like_people = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class StylePage extends AppCompatActivity {
         Glide.with(this).load(selectedUser.getImage()).into(binding.exUserImg);
         //binding.exUserImg.setImageResource(R.drawable.ex_kwangjin_img);
 
-
+        post_like(0);
 
         binding.styleBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,18 +94,14 @@ public class StylePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 좋아요 카운터 증가
-                likeCount++;
-                likeCountTextView.setText(String.valueOf(likeCount));
-                toggleImage();
+                post_like(1);
             }
         });
         like2image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 좋아요 카운터 감소
-                likeCount--;
-                likeCountTextView.setText(String.valueOf(likeCount));
-                toggleImage();
+                post_like(2);
             }
         });
 
@@ -112,22 +110,34 @@ public class StylePage extends AppCompatActivity {
     }
     protected void toggleImage() {
         // 클릭 전 이미지뷰가 보이면 클릭 후 이미지뷰로 전환하고, 그 반대의 경우도 마찬가지로 전환.
-        if (likeimage.getVisibility() == View.VISIBLE) {
+        //Login_User user = Login_User.getInstance();
+        //if (like_people.contains(user.getEmail())) {
+        if (like_people.contains("ddooochii@gmail.com")) {
             likeimage.setVisibility(View.GONE);
             like2image.setVisibility(View.VISIBLE);
         } else {
             likeimage.setVisibility(View.VISIBLE);
             like2image.setVisibility(View.GONE);
         }
-
+//        if (likeimage.getVisibility() == View.VISIBLE) {
+//            likeimage.setVisibility(View.GONE);
+//            like2image.setVisibility(View.VISIBLE);
+//        } else {
+//            likeimage.setVisibility(View.VISIBLE);
+//            like2image.setVisibility(View.GONE);
+//        }
     }
 
-    private void post_like() {
+    private void post_like(int type) { // 0 실시간확인, 1 증가, 2감소
         Login_User user = Login_User.getInstance();
         //String user_email = user.getEmail();
         String like_email = "ddooochii@gmail.com";
         int post_id = selectedUser.getId();
         int post_like = selectedUser.getPostlike();
+        if(type == 1)
+            post_like++;
+        else if(type == 2)
+            post_like--;
 
         Call<List<JsonObject>> call = apiInterface.likeUser(post_id, like_email, post_like);
         call.enqueue(new Callback<List<JsonObject>>() {
@@ -138,9 +148,12 @@ public class StylePage extends AppCompatActivity {
                     List<JsonObject> responseBody = response.body();
                     JsonObject firstobject = response.body().get(0); // 첫번째 인덱스에서 postlike 갖고오고
                     selectedUser.setPostlike(firstobject.get("postlike").getAsInt());
+                    selectedUser.setId(firstobject.get("id").getAsInt());
                     for (JsonObject jsonObject : responseBody) {
-                        // 여기다가 마저 작업하자.
+                        like_people.add(jsonObject.get("like_emial").getAsString());
                     }
+                    likeCountTextView.setText(String.valueOf(selectedUser.getPostlike()));
+                    toggleImage();
                 }
             }
 
