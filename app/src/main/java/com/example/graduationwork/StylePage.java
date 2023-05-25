@@ -146,7 +146,7 @@ public class StylePage extends AppCompatActivity {
                         JsonObject firstobject = response.body().get(0); // 첫번째 인덱스에서 postlike 갖고오고
                         selectedUser.setPostlike(firstobject.get("postlike").getAsInt());
                         if(firstobject.has("id") && firstobject.has("like_email")) {
-                            if(!firstobject.get("id").isJsonNull()) {
+                            if(!firstobject.get("id").isJsonNull()) { // 만약에 null값이 아닐경우 좋아요 누른 사람들의 이메일 갖고오는 로직
                                 selectedUser.setId(firstobject.get("id").getAsInt());
                                 for (JsonObject jsonObject : responseBody) {
                                     like_people.add(jsonObject.get("like_email").getAsString());
@@ -175,8 +175,8 @@ public class StylePage extends AppCompatActivity {
 
     private void showEditDeleteDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("피트 수정 또는 삭제");
-        builder.setMessage("피트를 수정하거나 삭제하시겠습니까?");
+        builder.setTitle("피드 수정 또는 삭제");
+        builder.setMessage("피드를 수정하거나 삭제하시겠습니까?");
         builder.setPositiveButton("수정", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

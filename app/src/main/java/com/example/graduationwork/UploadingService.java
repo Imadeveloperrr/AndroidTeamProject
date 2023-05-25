@@ -15,6 +15,11 @@ public interface UploadingService {
             @Query("user_email") String user_email
     );
 
+    @GET("image.php")
+    Call<List<Uploading_User>> getRequestInfo(
+
+    );
+
     @FormUrlEncoded
     @POST("image.php")
     Call<Uploading_User> insertUploading(

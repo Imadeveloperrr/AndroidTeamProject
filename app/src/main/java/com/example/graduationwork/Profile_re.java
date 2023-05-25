@@ -42,6 +42,8 @@ public class Profile_re extends AppCompatActivity {
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.profile_re_show_img, profileFragment);
                     transaction.commit();
+                    binding.profileRePostCount.setText(String.valueOf(userList.size()));
+
                 } else {
                     Toast.makeText(Profile_re.this, "실패", Toast.LENGTH_SHORT).show();
                     Log.d("success", "response content : " + response.body());
