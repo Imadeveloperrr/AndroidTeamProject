@@ -1,10 +1,12 @@
 package com.example.graduationwork;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,11 @@ public class Profile_re extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ProfileReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ImageView imageView2 = findViewById(R.id.my);
+        imageView2.setImageResource(R.drawable.homepage_profile2);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(imageView2, "alpha", 0f, 1f);
+        animator.setDuration(700);
+        animator.start();
 
         UploadingService apiInterface = ApiClient.getClient().create(UploadingService.class);
         Call<List<Uploading_User>> call = apiInterface.getUploading("ddooochii@gmail.com");

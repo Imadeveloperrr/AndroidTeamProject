@@ -238,8 +238,8 @@
 
             <ImageView
                 android:id="@+id/home"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="24dp"
+                android:layout_height="26.67dp"
                 android:src="@drawable/homepage_home" />
         </LinearLayout>
 
@@ -251,8 +251,8 @@
 
             <ImageView
                 android:id="@+id/serch"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/homepage_search" />
         </LinearLayout>
 
@@ -277,8 +277,8 @@
 
             <ImageView
                 android:id="@+id/message"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="26.67dp"
+                android:layout_height="26.67dp"
                 android:src="@drawable/homepage_message" />
         </LinearLayout>
 
@@ -290,8 +290,8 @@
 
             <ImageView
                 android:id="@+id/my"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="26.67dp"
+                android:layout_height="26.67dp"
                 android:src="@drawable/homepage_profile" />
         </LinearLayout>
     </LinearLayout>

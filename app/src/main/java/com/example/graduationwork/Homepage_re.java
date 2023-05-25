@@ -1,6 +1,10 @@
 package com.example.graduationwork;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +36,13 @@ public class Homepage_re extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loadingPage();
+
+        ImageView imageView = findViewById(R.id.home);
+        imageView.setImageResource(R.drawable.homepage_home2);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "alpha", 0f, 1f);
+        animator.setDuration(700);
+        animator.start();
+
         binding.check.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -72,7 +83,7 @@ public class Homepage_re extends AppCompatActivity {
     //homepage_content_con_1, homepage_content_supcon_1
     private void setUpdatePage() {
         List<Uploading_User> copyList = new ArrayList<>(userList); // Comparator은 순서를 바꿔서 저장시키므로 userList 복사해서 새로 만듦
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { // 안드로이드 버전 7.0 이상인지 확인하는코드
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { // 안드로이드 버전 7.0 이상인지 확인
             copyList.sort(new Comparator<Uploading_User>() { // 내림차순 정렬
                 @Override
                 public int compare(Uploading_User u1, Uploading_User u2) {
@@ -89,6 +100,12 @@ public class Homepage_re extends AppCompatActivity {
         };
         for (int i=0; i<top4List.size(); i++) {
             Glide.with(this).load(top4List.get(i).getImage()).into(imageViews[i]);
+            int finalI = i;
+            imageViews[i].setOnClickListener(view ->  {
+                Intent intent = new Intent(Homepage_re.this, StylePage.class);
+                intent.putExtra("selectedUser", top4List.get(finalI));
+                startActivity(intent);
+            });
         }
     }
 }

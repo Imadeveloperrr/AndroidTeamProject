@@ -1,6 +1,7 @@
 package com.example.graduationwork;
 
 
+import android.animation.ObjectAnimator;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
@@ -11,6 +12,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +49,11 @@ public class Uploading_re extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = UploadingReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ImageView imageView2 = findViewById(R.id.check);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(imageView2, "alpha", 1f, 0f, 1f);
+        animator.setDuration(350);
+        animator.setRepeatCount(0);
+        animator.start();
 
         apiInterface = ApiClient.getClient().create(UploadingService.class);
 
