@@ -39,37 +39,35 @@
             <RelativeLayout
                 android:id="@+id/homepage_input_search"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="290dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="16dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="68dp">
 
-                <View
+                <ImageView
                     android:id="@+id/homepage_main_bg"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:background="@drawable/homepage_main_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/homepage_logo"
                     />
 
                 <TextView
-                    android:id="@+id/homepage_main_search"
-                    android:layout_width="54dp"
-                    android:layout_height="19dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_centerVertical="true"
-                    android:text="@string/homepage_main_search"
-                    android:textAppearance="@style/homepage_main_search"
-                    android:gravity="top"
-                    />
+                    android:id="@+id/homepage_main_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="내 취향의 계정을 팔로우 하고"
+                    android:textAppearance="@style/homepage_main_logo2"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@id/homepage_main_logo"
+                    android:text="피드를 완성해 보세요"
+                    android:textAppearance="@style/homepage_main_logo2"/>
 
             </RelativeLayout>
 
@@ -78,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="400dp"
                 android:clipToOutline="true">
                 <TextView
                     android:id="@+id/homepage_main_id"
