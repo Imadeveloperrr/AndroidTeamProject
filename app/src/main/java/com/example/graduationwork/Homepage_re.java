@@ -60,6 +60,22 @@ public class Homepage_re extends AppCompatActivity {
             }
         });
 
+        binding.homepageMarket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage_re.this, Login_re.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.serch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homepage_re.this, Search.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

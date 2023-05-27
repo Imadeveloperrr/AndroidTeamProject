@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Search -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/search_layout">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_bar">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- Search_header -->
+            <RelativeLayout
+                android:id="@+id/search_header"
+                android:layout_width="411dp"
+                android:layout_height="140dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:clipToOutline="true">
+                <!-- Search_layout -->
+                <RelativeLayout
+                    android:id="@+id/search_header_box"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="19dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="35dp">
+                    <!-- Search_info_box -->
+                    <View
+                        android:id="@+id/search_info_box"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@drawable/search_info_box" />
+                    <!-- search_icon -->
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/search_icon" />
+                    <!-- Search_info -->
+                    <EditText
+                        android:id="@+id/search_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="48dp"
+                        android:gravity="top"
+                        android:hint="@string/search_info"
+                        android:textAppearance="@style/search_info" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <!-- Search_main -->
+            <RelativeLayout
+                android:id="@+id/search_main"
+                android:layout_width="411dp"
+                android:layout_height="787dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="140dp"
+                android:clipToOutline="true">
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="24dp"
+                android:layout_height="26.67dp"
+                android:src="@drawable/homepage_home" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/serch"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/homepage_search" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/check"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/homepage_check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/message"
+                android:layout_width="26.67dp"
+                android:layout_height="26.67dp"
+                android:src="@drawable/homepage_message" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/my"
+                android:layout_width="26.67dp"
+                android:layout_height="26.67dp"
+                android:src="@drawable/homepage_profile" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

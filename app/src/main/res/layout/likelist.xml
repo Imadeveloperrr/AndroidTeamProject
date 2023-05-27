@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/likelist"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/likelist_layout">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_bar">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- Likelist_header -->
+            <RelativeLayout
+                android:id="@+id/Likelist_header"
+                android:layout_width="420dp"
+                android:layout_height="56dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:clipToOutline="true"
+                android:background="@drawable/likelist_edge">
+                <!-- Likelist_Back -->
+                <TextView
+                    android:id="@+id/Likelist_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="top"
+                    android:text="@string/likelist_back"
+                    android:textAppearance="@style/likelist_back"/>
+                <!-- Likelist_textview -->
+                <TextView
+                    android:id="@+id/likelist_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="180dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/likelist_text"
+                    android:textAppearance="@style/likelist_text" />
+            </RelativeLayout>
+            <!-- Likelist_main -->
+            <RelativeLayout
+                android:id="@+id/likelist_main"
+                android:layout_width="411dp"
+                android:layout_height="871dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="55dp"
+                android:clipToOutline="true">
+                <!-- Likelist_Search_layout -->
+                <RelativeLayout
+                    android:id="@+id/likelist_search_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="19dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="35dp">
+                    <!-- Likelist_info_box -->
+                    <View
+                        android:id="@+id/likelist_info_box"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/likelist_info_box"
+                        />
+                    <!-- Likelist_Search_icon -->
+                    <ImageView
+                        android:id="@+id/Likelist_search_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/search_icon" />
+                    <!-- Likelist_info -->
+                    <EditText
+                        android:id="@+id/Likelist_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="48dp"
+                        android:gravity="top"
+                        android:hint="@string/search_info"
+                        android:textAppearance="@style/search_info" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="24dp"
+                android:layout_height="26.67dp"
+                android:src="@drawable/homepage_home" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/serch"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/homepage_search" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/check"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/homepage_check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/message"
+                android:layout_width="26.67dp"
+                android:layout_height="26.67dp"
+                android:src="@drawable/homepage_message" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/my"
+                android:layout_width="26.67dp"
+                android:layout_height="26.67dp"
+                android:src="@drawable/homepage_profile" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

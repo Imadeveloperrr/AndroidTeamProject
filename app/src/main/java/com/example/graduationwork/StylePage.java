@@ -107,6 +107,27 @@ public class StylePage extends AppCompatActivity {
                 showEditDeleteDialog();
             }
         });
+        binding.serch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StylePage.this, Search.class);
+                startActivity(intent);
+            }
+        });
+        binding.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StylePage.this, Homepage_re.class);
+                startActivity(intent);
+            }
+        });
+        binding.likeCountTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StylePage.this, Likelist.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

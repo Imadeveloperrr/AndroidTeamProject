@@ -56,6 +56,14 @@ public class Signup_re extends AppCompatActivity {
 
         signupService = retrofit.create(SignupService.class);
 
+        binding.signupReBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Signup_re.this, Login_re.class);
+                startActivity(intent);
+            }
+        });
+
         binding.signupReBt.setOnClickListener(new View.OnClickListener() {
 
             @Override

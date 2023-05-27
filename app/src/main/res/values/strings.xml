@@ -68,4 +68,7 @@
     <string name="uploading_re_comment_register">등록하기</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_info">검색</string>
+    <string name="likelist_back">Back</string>
+    <string name="likelist_text">좋아요</string>
 </resources>

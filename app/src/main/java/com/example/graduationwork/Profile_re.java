@@ -132,6 +132,14 @@ public class Profile_re extends AppCompatActivity {
             }
         });
 
+        binding.serch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile_re.this, Search.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
