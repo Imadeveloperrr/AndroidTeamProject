@@ -2,7 +2,6 @@ package com.example.graduationwork;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +23,11 @@ public class Profile_re extends AppCompatActivity {
     private ProfileReBinding binding;
     private boolean isGray = false;
     private List<Uploading_User> userList;
+    boolean isViewVisible = false;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,57 +68,6 @@ public class Profile_re extends AppCompatActivity {
             }
         });
 
-        binding.profileReCaStyle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isGray) {
-                    binding.profileReCaStyle.setTextColor(Color.GRAY);
-                    isGray = false;
-                } else {
-                    binding.profileReCaStyle.setTextColor(Color.BLACK);
-                    isGray = true;
-                }
-            }
-        });
-
-        binding.profileReCaReview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isGray) {
-                    binding.profileReCaReview.setTextColor(Color.BLACK);
-                    isGray = false;
-                } else {
-                    binding.profileReCaReview.setTextColor(Color.GRAY);
-                    isGray = true;
-                }
-            }
-        });
-
-        binding.profileReCaCollection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isGray) {
-                    binding.profileReCaCollection.setTextColor(Color.BLACK);
-                    isGray = false;
-                } else {
-                    binding.profileReCaCollection.setTextColor(Color.GRAY);
-                    isGray = true;
-                }
-            }
-        });
-
-        binding.profileReCaScrap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isGray) {
-                    binding.profileReCaScrap.setTextColor(Color.BLACK);
-                    isGray = false;
-                } else {
-                    binding.profileReCaScrap.setTextColor(Color.GRAY);
-                    isGray = true;
-                }
-            }
-        });
 
         binding.home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +92,55 @@ public class Profile_re extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.profileReFollowing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile_re.this, Following_followerPage.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.profileReFollowerBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isViewVisible) {
+                    // 이전 뷰로 돌아가기
+                    binding.profileReFollowerBox2.setVisibility(View.GONE);
+                    binding.profileReFollowerBox.setVisibility(View.VISIBLE);
+                    binding.profileReFollowerInfo2.setVisibility(View.GONE);
+                    binding.profileReFollowerInfo.setVisibility(View.VISIBLE);
+                    isViewVisible = false;
+                } else {
+                    // 전환할 뷰로 전환
+                    binding.profileReFollowerBox.setVisibility(View.GONE);
+                    binding.profileReFollowerBox2.setVisibility(View.VISIBLE);
+                    binding.profileReFollowerInfo.setVisibility(View.GONE);
+                    binding.profileReFollowerInfo2.setVisibility(View.VISIBLE);
+                    isViewVisible = true;
+                }
+            }
+        });
+
+        binding.profileReFollowerBox2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 이전 뷰로 돌아가기
+                binding.profileReFollowerBox2.setVisibility(View.GONE);
+                binding.profileReFollowerBox.setVisibility(View.VISIBLE);
+                binding.profileReFollowerInfo2.setVisibility(View.GONE);
+                binding.profileReFollowerInfo.setVisibility(View.VISIBLE);
+                isViewVisible = false;
+            }
+        });
+
+
+
+
+
+
+
+
 
     }
 

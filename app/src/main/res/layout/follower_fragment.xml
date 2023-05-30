@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+        <ImageView
+            android:id="@+id/profile_info"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/person_icon"/>
+
+        <!--이름-->
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="조용우"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <!--상태 메시지-->
+        <TextView
+            android:id="@+id/message_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="174cm 64kg 260mm"
+            android:textSize="12sp"
+            android:textColor="#444"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+    <!--구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#aaa"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+        <ImageView
+            android:id="@+id/profile_info2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/person_icon"/>
+
+        <!--이름-->
+        <TextView
+            android:id="@+id/user_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="유광진"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <!--상태 메시지-->
+        <TextView
+            android:id="@+id/message_info2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="174cm 64kg 260mm"
+            android:textSize="12sp"
+            android:textColor="#444"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+    <!--구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#aaa"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+        <!--프로필 사진-->
+        <ImageView
+            android:id="@+id/profile_info3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/person_icon"/>
+
+        <!--이름-->
+        <TextView
+            android:id="@+id/user_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="김민우"
+            android:textSize="16sp"
+            android:textColor="#000"/>
+
+        <!--상태 메시지-->
+        <TextView
+            android:id="@+id/message_info3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="174cm 64kg 260mm"
+            android:textSize="12sp"
+            android:textColor="#444"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+
+    <!--구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#aaa"/>
+
+</LinearLayout>

@@ -65,6 +65,30 @@ public class Uploading_re extends AppCompatActivity {
             }
         });
 
+        binding.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                Intent intent = new Intent(Uploading_re.this, Homepage_re.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.serch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                Intent intent = new Intent(Uploading_re.this, Search.class);
+                startActivity(intent);
+            }
+        });
+
+         binding.my.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(android.view.View view) {
+                 Intent intent = new Intent(Uploading_re.this, Profile_re.class);
+                 startActivity(intent);
+             }
+         });
+
         s3Client = new AmazonS3Client(new BasicAWSCredentials("AKIAYGFTFCC7AI7AODD6", "RgA2qnuUzhSQCjfSh3Zwz9sVN+UtojDCtuaUBu/M"));
         s3Client.setRegion(Region.getRegion(Regions.fromName(region)));
 

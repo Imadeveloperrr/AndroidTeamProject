@@ -121,6 +121,21 @@ public class StylePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        binding.my.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StylePage.this, Profile_re.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StylePage.this, Uploading_re.class);
+                startActivity(intent);
+            }
+        });
         binding.likeCountTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

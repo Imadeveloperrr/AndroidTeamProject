@@ -71,4 +71,13 @@
     <string name="search_info">검색</string>
     <string name="likelist_back">Back</string>
     <string name="likelist_text">좋아요</string>
+    <string name="profile_re_follower_info">팔로우</string>
+    <string name="profile_re_follower_info2">팔로잉</string>
+    <string name="profile_re_message_info">메세지</string>
+    <string name="following_follower_Back">Back</string>
+    <string name="user_info">유광진</string>
+    <string name="following_logo">Following</string>
+    <string name="follower_logo">Follower</string>
+
+
 </resources>

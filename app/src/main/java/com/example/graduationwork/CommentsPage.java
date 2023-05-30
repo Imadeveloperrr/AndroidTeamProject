@@ -27,5 +27,37 @@ public class CommentsPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CommentsPage.this, Homepage_re.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.serch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CommentsPage.this, Search.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CommentsPage.this, Uploading_re.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.my.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CommentsPage.this, Profile_re.class);
+                startActivity(intent);
+            }
+        });
     }
 }

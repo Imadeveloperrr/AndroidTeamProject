@@ -49,6 +49,79 @@
                 android:gravity="top"
                 android:text="@string/profile_re_name"
                 android:textAppearance="@style/profile_re_name" />
+            <!-- follower -->
+            <View
+                android:id="@+id/profile_re_follower_box"
+                android:layout_width="119dp"
+                android:layout_height="29dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="152dp"
+                android:layout_marginTop="389dp"
+                android:background="@drawable/profile_re_border_layout" />
+            <!-- following -->
+            <View
+                android:id="@+id/profile_re_follower_box2"
+                android:layout_width="119dp"
+                android:layout_height="29dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="152dp"
+                android:layout_marginTop="389dp"
+                android:background="@drawable/profile_re_border_layout2"
+                android:visibility="gone"/>
+            <!-- message -->
+            <View
+                android:id="@+id/profile_re_message"
+                android:layout_width="119dp"
+                android:layout_height="29dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="278dp"
+                android:layout_marginTop="389dp"
+                android:background="@drawable/profile_re_border_layout2" />
+            <!-- 팔로우 -->
+            <TextView
+                android:id="@+id/profile_re_follower_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="392dp"
+                android:gravity="top"
+                android:text="@string/profile_re_follower_info"
+                android:textAppearance="@style/profile_re_follower_info" />
+            <!-- 팔로잉-->
+            <TextView
+                android:id="@+id/profile_re_follower_info2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="392dp"
+                android:gravity="top"
+                android:visibility="gone"
+                android:text="@string/profile_re_follower_info2"
+                android:textAppearance="@style/profile_re_follower_info2" />
+            <!-- 메세지 -->
+
+            <TextView
+                android:id="@+id/profile_re_message_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="318dp"
+                android:layout_marginTop="392dp"
+                android:gravity="top"
+                android:text="@string/profile_re_message_info"
+                android:textAppearance="@style/profile_re_message_info" />
 
             <TextView
                 android:id="@+id/profile_re_Body"

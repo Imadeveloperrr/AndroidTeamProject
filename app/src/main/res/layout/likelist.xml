@@ -39,10 +39,10 @@
                     android:id="@+id/likelist_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="180dp"
                     android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="180dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/likelist_text"
                     android:textAppearance="@style/likelist_text" />
@@ -57,49 +57,7 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="55dp"
                 android:clipToOutline="true">
-                <!-- Likelist_Search_layout -->
-                <RelativeLayout
-                    android:id="@+id/likelist_search_layout"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="19dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="35dp">
-                    <!-- Likelist_info_box -->
-                    <View
-                        android:id="@+id/likelist_info_box"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentBottom="true"
-                        android:background="@drawable/likelist_info_box"
-                        />
-                    <!-- Likelist_Search_icon -->
-                    <ImageView
-                        android:id="@+id/Likelist_search_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginLeft="11dp"
-                        android:layout_marginTop="13dp"
-                        android:src="@drawable/search_icon" />
-                    <!-- Likelist_info -->
-                    <EditText
-                        android:id="@+id/Likelist_info"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="48dp"
-                        android:gravity="top"
-                        android:hint="@string/search_info"
-                        android:textAppearance="@style/search_info" />
-                </RelativeLayout>
+
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
