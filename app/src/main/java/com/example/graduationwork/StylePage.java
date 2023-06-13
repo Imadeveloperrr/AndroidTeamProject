@@ -30,7 +30,7 @@ public class StylePage extends AppCompatActivity {
     private ImageView like2image;
     private TextView likeCountTextView;
 
-    private StylePageService apiInterface;
+    private ApiService apiInterface;
     private Uploading_User selectedUser;
 
     private List<String> like_people = new ArrayList<String>();
@@ -43,7 +43,7 @@ public class StylePage extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        apiInterface = ApiClient.getClient().create(StylePageService.class);
+        apiInterface = ApiClient.getClient().create(ApiService.class);
         // StylePage 액티비티에서 사진을 표시하는 레이아웃을 가져오고,
         // 뷰바인딩을 사용하여 레이아웃 내부의 ImageView를 참조하는 코드
 

@@ -282,13 +282,13 @@
                     <ImageView
                         android:id="@+id/homepage_content_supcon_1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
                         android:layout_weight="1"/>
                     <ImageView
                         android:id="@+id/homepage_content_supcon_2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
                         android:layout_weight="1"/>
                 </LinearLayout>
@@ -362,13 +362,13 @@
                     <ImageView
                         android:id="@+id/homepage_content_supcon_3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
                         android:layout_weight="1"/>
                     <ImageView
                         android:id="@+id/homepage_content_supcon_4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="250dp"
                         android:scaleType="centerCrop"
                         android:layout_weight="1"/>
                 </LinearLayout>

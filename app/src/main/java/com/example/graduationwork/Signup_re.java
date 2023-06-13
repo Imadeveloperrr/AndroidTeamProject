@@ -30,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Signup_re extends AppCompatActivity {
 
     private SignupReBinding binding;
-    private SignupService signupService;
+    private ApiService signupService;
     String email, pw, name, number, tall, weight, gender, foot;
 
     @Override
@@ -54,7 +54,7 @@ public class Signup_re extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        signupService = retrofit.create(SignupService.class);
+        signupService = retrofit.create(ApiService.class);
 
         binding.signupReBack.setOnClickListener(new View.OnClickListener() {
             @Override

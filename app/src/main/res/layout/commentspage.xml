@@ -72,6 +72,12 @@
                 android:layout_marginTop="147dp"
                 android:clipToOutline="true">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/comments_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToOutline="true" />
+
                 <TextView
                     android:id="@+id/comments_main_info"
                     android:layout_width="wrap_content"

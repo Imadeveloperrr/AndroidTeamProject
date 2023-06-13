@@ -19,7 +19,7 @@ import retrofit2.Response;
 public class Login_re extends AppCompatActivity {
 
     private LoginReBinding binding;
-    private LoginService apiInterface;
+    private ApiService apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class Login_re extends AppCompatActivity {
         binding = LoginReBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        apiInterface = ApiClient.getClient().create(LoginService.class);
+        apiInterface = ApiClient.getClient().create(ApiService.class);
 
         binding.loginReBtLoginLayout.setOnClickListener(new View.OnClickListener() {
             @Override

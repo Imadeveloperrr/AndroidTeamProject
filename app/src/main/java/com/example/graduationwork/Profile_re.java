@@ -40,7 +40,7 @@ public class Profile_re extends AppCompatActivity {
         animator.setDuration(700);
         animator.start();
 
-        UploadingService apiInterface = ApiClient.getClient().create(UploadingService.class);
+        ApiService apiInterface = ApiClient.getClient().create(ApiService.class);
         Call<List<Uploading_User>> call = apiInterface.getUploading("ddooochii@gmail.com");
         call.enqueue(new Callback<List<Uploading_User>>() {
             @Override
@@ -48,7 +48,7 @@ public class Profile_re extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     userList = response.body();
                     ProfileFragment profileFragment = new ProfileFragment();
-                    profileFragment.setUserList(userList); // Set the userList in the fragment.
+                    profileFragment.setUserList(userList); //
 
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.profile_re_show_img, profileFragment);

@@ -32,7 +32,7 @@ import retrofit2.Response;
 public class Homepage_re extends AppCompatActivity {
     private HomepageReBinding binding;
     private List<Uploading_User> userList;
-    UploadingService apiInterface = ApiClient.getClient().create(UploadingService.class);
+    ApiService apiInterface = ApiClient.getClient().create(ApiService.class);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,12 +102,21 @@ public class Homepage_re extends AppCompatActivity {
     }
     //homepage_content_con_1, homepage_content_supcon_1
     private void setUpdatePage() {
+        Login_User user = Login_User.getInstance();
+        //String user_email = user.getEmail();
         List<Uploading_User> copyList = new ArrayList<>(userList); // Comparator은 순서를 바꿔서 저장시키므로 userList 복사해서 새로 만듦
+        List<Uploading_User> copyList2 = new ArrayList<>(userList); // Comparator은 순서를 바꿔서 저장시키므로 userList 복사해서 새로 만듦
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) { // 안드로이드 버전 7.0 이상인지 확인
             copyList.sort(new Comparator<Uploading_User>() { // 내림차순 정렬
                 @Override
                 public int compare(Uploading_User u1, Uploading_User u2) {
                     return Integer.compare(u2.getPostlike(), u1.getPostlike());
+                }
+            });
+            copyList2.sort(new Comparator<Uploading_User>() {
+                @Override
+                public int compare(Uploading_User u1, Uploading_User u2) {
+                    return Integer.compare(u2.getId(), u1.getId());
                 }
             });
         }
@@ -118,14 +127,31 @@ public class Homepage_re extends AppCompatActivity {
                 binding.homepageContentCon3,
                 binding.homepageContentCon4
         };
+        ImageView[] imageViews2 = {
+                binding.homepageContentSupcon1,
+                binding.homepageContentSupcon2,
+                binding.homepageContentSupcon3,
+                binding.homepageContentSupcon4
+        };
         for (int i=0; i<top4List.size(); i++) {
             Glide.with(this)
                     .load(top4List.get(i).getImage())
                     .into(imageViews[i]);
+            //String emailCheck = top4List.get(i).getUser_email();
+            //binding.homepageContentTvTitle.setText(String.valueOf());
+
+            Glide.with(this)
+                    .load(copyList2.get(i).getImage())
+                    .into(imageViews2[i]);
             int finalI = i;
             imageViews[i].setOnClickListener(view ->  {
                 Intent intent = new Intent(Homepage_re.this, StylePage.class);
                 intent.putExtra("selectedUser", top4List.get(finalI));
+                startActivity(intent);
+            });
+            imageViews2[i].setOnClickListener(view ->  {
+                Intent intent = new Intent(Homepage_re.this, StylePage.class);
+                intent.putExtra("selectedUser", copyList2.get(finalI));
                 startActivity(intent);
             });
         }

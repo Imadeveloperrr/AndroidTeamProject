@@ -40,7 +40,7 @@ import retrofit2.Response;
 public class Uploading_re extends AppCompatActivity {
     View View;
     private UploadingReBinding binding;
-    private UploadingService apiInterface;
+    private ApiService apiInterface;
     private AmazonS3 s3Client;
     private String bucketName = "sunghobucket";
     private String region = "ap-northeast-2";
@@ -55,7 +55,7 @@ public class Uploading_re extends AppCompatActivity {
         animator.setRepeatCount(0);
         animator.start();
 
-        apiInterface = ApiClient.getClient().create(UploadingService.class);
+        apiInterface = ApiClient.getClient().create(ApiService.class);
 
         binding.uploadingReBack.setOnClickListener(new View.OnClickListener() {
             @Override
